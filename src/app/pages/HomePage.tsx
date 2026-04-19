@@ -1,6 +1,6 @@
 import { lazy, Suspense } from 'react';
 import { HeroSectionPro } from '../components/HeroSectionPro';
-import { SectionSkeleton } from '../components/ui/Skeleton';
+import { SectionSkeleton } from '../components/ui/skeleton';
 
 // Lazy load ALL sections below the fold for maximum performance
 const CompaniesSection = lazy(() => import('../components/CompaniesSection').then(m => ({ default: m.CompaniesSection })));

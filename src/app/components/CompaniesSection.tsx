@@ -9,20 +9,23 @@ import ibmLogo from '@/assets/companies/ibm.jpg';
 import cognizantLogo from '@/assets/companies/cognizant.png';
 import techmahindraLogo from '@/assets/companies/techmahindra.png';
 import hclLogo from '@/assets/companies/hcl.png';
+import cursorLogo from '@/assets/companies/cursorai.png';
+
+const companies = [
+  { name: 'Google', logo: googleLogo },
+  { name: 'Microsoft', logo: microsoftLogo },
+  { name: 'Amazon', logo: amazonLogo },
+  { name: 'TCS', logo: tcsLogo },
+  { name: 'Wipro', logo: wiproLogo },
+  { name: 'Deloitte', logo: deloitteLogo },
+  { name: 'IBM', logo: ibmLogo },
+  { name: 'Cognizant', logo: cognizantLogo },
+  { name: 'Tech Mahindra', logo: techmahindraLogo },
+  { name: 'HCL', logo: hclLogo },
+  { name: 'Cursor', logo: cursorLogo },
+];
 
 export function CompaniesSection() {
-  const companies = [
-    { name: 'Google', logo: googleLogo },
-    { name: 'Microsoft', logo: microsoftLogo },
-    { name: 'Amazon', logo: amazonLogo },
-    { name: 'TCS', logo: tcsLogo },
-    { name: 'Wipro', logo: wiproLogo },
-    { name: 'Deloitte', logo: deloitteLogo },
-    { name: 'IBM', logo: ibmLogo },
-    { name: 'Cognizant', logo: cognizantLogo },
-    { name: 'Tech Mahindra', logo: techmahindraLogo },
-    { name: 'HCL', logo: hclLogo },
-  ];
 
   return (
     <div className="py-12 bg-surface/50 relative overflow-hidden theme-transition">
