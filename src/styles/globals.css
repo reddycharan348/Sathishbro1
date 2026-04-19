@@ -1,0 +1,204 @@
+@import "tailwindcss";
+
+:root {
+  --primary-blue: #0B4F8A;
+  --primary-cyan: #3BC5E8;
+  --accent-blue: #1E88E5;
+  --dark-blue: #053057;
+  --light-cyan: #7DD3FC;
+
+  /* Theme-aware custom colors */
+  --page-bg: #ffffff;
+  --page-fg: #0f172a;
+  --surface: #f8fafc;
+  --surface-hover: #f1f5f9;
+  --surface-border: #e2e8f0;
+  --card-bg: #ffffff;
+  --card-border: #e2e8f0;
+  --heading-color: #0f172a;
+  --text-primary: #0f172a;
+  --text-secondary: #334155;
+  --text-muted: #526171;
+  --nav-bg: rgba(255, 255, 255, 0.85);
+  --nav-border: rgba(59, 130, 246, 0.1);
+  --hero-gradient-start: rgba(59, 130, 246, 0.08);
+  --hero-gradient-mid: #ffffff;
+  --hero-gradient-end: #ffffff;
+  --orb-blue: rgba(59, 130, 246, 0.12);
+  --orb-cyan: rgba(6, 182, 212, 0.12);
+  --grid-line: rgba(11, 79, 138, 0.06);
+  --particle-color: rgba(59, 130, 246, 0.25);
+  --scrollbar-track: #f1f5f9;
+  --scrollbar-thumb: linear-gradient(180deg, #0B4F8A 0%, #3BC5E8 100%);
+  --scrollbar-thumb-hover: linear-gradient(180deg, #1E88E5 0%, #7DD3FC 100%);
+}
+
+.dark {
+  --page-bg: #020617;
+  --page-fg: #f1f5f9;
+  --surface: rgba(15, 23, 42, 0.5);
+  --surface-hover: rgba(30, 41, 59, 0.5);
+  --surface-border: rgba(30, 41, 59, 1);
+  --card-bg: rgba(15, 23, 42, 0.5);
+  --card-border: rgba(30, 41, 59, 1);
+  --heading-color: #ffffff;
+  --text-primary: #e2e8f0;
+  --text-secondary: #94a3b8;
+  --text-muted: #64748b;
+  --nav-bg: rgba(2, 6, 23, 0.8);
+  --nav-border: rgba(30, 58, 138, 0.2);
+  --hero-gradient-start: rgba(30, 58, 138, 0.3);
+  --hero-gradient-mid: #020617;
+  --hero-gradient-end: #020617;
+  --orb-blue: rgba(37, 99, 235, 0.2);
+  --orb-cyan: rgba(6, 182, 212, 0.2);
+  --grid-line: rgba(11, 79, 138, 0.08);
+  --particle-color: rgba(96, 165, 250, 0.3);
+  --scrollbar-track: #0f172a;
+  --scrollbar-thumb: linear-gradient(180deg, #0B4F8A 0%, #3BC5E8 100%);
+  --scrollbar-thumb-hover: linear-gradient(180deg, #1E88E5 0%, #7DD3FC 100%);
+}
+
+@theme inline {
+  --color-page-bg: var(--page-bg);
+  --color-page-fg: var(--page-fg);
+  --color-surface: var(--surface);
+  --color-surface-hover: var(--surface-hover);
+  --color-surface-border: var(--surface-border);
+  --color-card-bg: var(--card-bg);
+  --color-card-border: var(--card-border);
+  --color-heading: var(--heading-color);
+  --color-text-primary: var(--text-primary);
+  --color-text-secondary: var(--text-secondary);
+  --color-text-muted: var(--text-muted);
+  --color-nav-bg: var(--nav-bg);
+  --color-nav-border: var(--nav-border);
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  
+  body {
+    background-color: var(--page-bg);
+    color: var(--page-fg);
+    font-feature-settings: "rlig" 1, "calt" 1;
+    /* GPU acceleration for smooth scrolling */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+
+  h1 {
+    @apply scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl;
+  }
+
+  h2 {
+    @apply scroll-m-20 text-3xl font-semibold tracking-tight;
+  }
+
+  h3 {
+    @apply scroll-m-20 text-2xl font-semibold tracking-tight;
+  }
+
+  h4 {
+    @apply scroll-m-20 text-xl font-semibold tracking-tight;
+  }
+
+  p {
+    @apply leading-7;
+  }
+}
+
+/* Performance optimizations */
+* {
+  /* Enable GPU acceleration */
+  will-change: auto;
+}
+
+/* Optimize animations */
+@media (prefers-reduced-motion: no-preference) {
+  * {
+    scroll-behavior: smooth;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--scrollbar-track);
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #0B4F8A 0%, #3BC5E8 100%);
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #1E88E5 0%, #7DD3FC 100%);
+}
+
+/* Smooth scroll behavior */
+html {
+  scroll-behavior: smooth;
+  /* Improve rendering performance */
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Gradient animations - optimized */
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.animate-gradient {
+  background-size: 200% 200%;
+  animation: gradient 6s ease infinite;
+  will-change: background-position;
+}
+
+/* Glow effect - optimized */
+@keyframes glow {
+  0%, 100% {
+    box-shadow: 0 0 20px rgba(59, 197, 232, 0.5);
+  }
+  50% {
+    box-shadow: 0 0 40px rgba(59, 197, 232, 0.8);
+  }
+}
+
+.animate-glow {
+  animation: glow 2s ease-in-out infinite;
+  will-change: box-shadow;
+}
+
+/* Float animation - optimized */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+  will-change: transform;
+}
+
+/* Theme transition for key elements */
+.theme-transition {
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
