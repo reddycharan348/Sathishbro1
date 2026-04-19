@@ -2,6 +2,7 @@ import { ExternalLink, Sparkles, Code, Palette, FileText, Brain, Video, Music, D
 import { motion } from 'motion/react';
 import { useState, useMemo, memo } from 'react';
 import { ImageWithFallback } from './figma/ImageWithFallback';
+import aiToolsLogo from '@/assets/ai_tools_logo.png';
 
 // AI Tools Database
 const AI_TOOLS_DATA = [
@@ -670,6 +671,29 @@ export const AIToolsListSection = memo(function AIToolsListSection() {
       <div className="absolute bottom-0 left-0 w-96 h-96 bg-cyan-500/5 rounded-full blur-3xl" />
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Section Header with Logo */}
+        <motion.div 
+          initial={{ opacity: 0, y: -20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="text-center mb-16"
+        >
+          <div className="relative inline-block mb-6">
+            <div className="absolute inset-0 bg-purple-500/20 blur-3xl rounded-full animate-pulse" />
+            <img 
+              src={aiToolsLogo} 
+              alt="AI Tools Section" 
+              className="relative w-32 h-32 md:w-40 md:h-40 mx-auto object-contain drop-shadow-2xl"
+            />
+          </div>
+          <h2 className="text-3xl md:text-5xl font-extrabold text-heading mb-4 bg-gradient-to-r from-purple-400 via-cyan-400 to-purple-400 bg-clip-text text-transparent animate-gradient">
+            AI Tools Ecosystem
+          </h2>
+          <p className="text-lg text-text-muted max-w-2xl mx-auto">
+            Discover and master the most powerful AI tools curated for modern engineering students and tech professionals.
+          </p>
+        </motion.div>
+
 
           {/* Search bar */}
           <div className="max-w-2xl mx-auto relative group">
