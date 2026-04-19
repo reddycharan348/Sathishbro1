@@ -2,7 +2,63 @@ import { ExternalLink, Sparkles, Code, Palette, FileText, Brain, Video, Music, D
 import { motion } from 'motion/react';
 import { useState, useMemo, memo } from 'react';
 import { ImageWithFallback } from './figma/ImageWithFallback';
-import aiToolsLogo from '@/assets/ai_tools_logo.png';
+import lovableLogo from '@/assets/tools/lovable.png';
+import boltLogo from '@/assets/tools/bolt.png';
+import github_copilotLogo from '@/assets/tools/github_copilot.png';
+import cursorLogo from '@/assets/tools/cursor.png';
+import replitLogo from '@/assets/tools/replit.png';
+import codeiumLogo from '@/assets/tools/codeium.png';
+import tabnineLogo from '@/assets/tools/tabnine.png';
+import amazon_codewhispererLogo from '@/assets/tools/amazon_codewhisperer.png';
+import piecesLogo from '@/assets/tools/pieces.png';
+import codexLogo from '@/assets/tools/codex.png';
+import figLogo from '@/assets/tools/fig.png';
+import sourcegraph_codyLogo from '@/assets/tools/sourcegraph_cody.png';
+import chatgptLogo from '@/assets/tools/chatgpt.png';
+import google_geminiLogo from '@/assets/tools/google_gemini.png';
+import claudeLogo from '@/assets/tools/claude.png';
+import microsoft_copilotLogo from '@/assets/tools/microsoft_copilot.png';
+import perplexityLogo from '@/assets/tools/perplexity.png';
+import grammarlyLogo from '@/assets/tools/grammarly.png';
+import quillbotLogo from '@/assets/tools/quillbot.png';
+import jasperLogo from '@/assets/tools/jasper.png';
+import copyaiLogo from '@/assets/tools/copyai.png';
+import notion_aiLogo from '@/assets/tools/notion_ai.png';
+import canvaLogo from '@/assets/tools/canva.png';
+import midjourneyLogo from '@/assets/tools/midjourney.png';
+import dalle3Logo from '@/assets/tools/dalle3.png';
+import leonardoLogo from '@/assets/tools/leonardo.png';
+import stable_diffusionLogo from '@/assets/tools/stable_diffusion.png';
+import adobe_fireflyLogo from '@/assets/tools/adobe_firefly.png';
+import figma_aiLogo from '@/assets/tools/figma_ai.png';
+import removebgLogo from '@/assets/tools/removebg.png';
+import runwayLogo from '@/assets/tools/runway.png';
+import elevenlabsLogo from '@/assets/tools/elevenlabs.png';
+import descriptLogo from '@/assets/tools/descript.png';
+import pictoryLogo from '@/assets/tools/pictory.png';
+import synthesiaLogo from '@/assets/tools/synthesia.png';
+import murfLogo from '@/assets/tools/murf.png';
+import consensusLogo from '@/assets/tools/consensus.png';
+import elicitLogo from '@/assets/tools/elicit.png';
+import sciteLogo from '@/assets/tools/scite.png';
+import explainpaperLogo from '@/assets/tools/explainpaper.png';
+import quizletLogo from '@/assets/tools/quizlet.png';
+import wolframLogo from '@/assets/tools/wolfram.png';
+import scholarcyLogo from '@/assets/tools/scholarcy.png';
+import semantic_scholarLogo from '@/assets/tools/semantic_scholar.png';
+import gammaLogo from '@/assets/tools/gamma.png';
+import beautiful_aiLogo from '@/assets/tools/beautiful_ai.png';
+import slidesgoLogo from '@/assets/tools/slidesgo.png';
+import tomeLogo from '@/assets/tools/tome.png';
+import otterLogo from '@/assets/tools/otter.png';
+import todoistLogo from '@/assets/tools/todoist.png';
+import juliusLogo from '@/assets/tools/julius.png';
+import tableauLogo from '@/assets/tools/tableau.png';
+import datarobotLogo from '@/assets/tools/datarobot.png';
+import monkeylearnLogo from '@/assets/tools/monkeylearn.png';
+import deeplLogo from '@/assets/tools/deepl.png';
+import duolingoLogo from '@/assets/tools/duolingo.png';
+
 
 // AI Tools Database
 const AI_TOOLS_DATA = [
@@ -12,7 +68,7 @@ const AI_TOOLS_DATA = [
     description: 'AI-powered full-stack web app builder that generates production-ready code',
     category: 'Coding & Development',
     icon: Code,
-    logo: 'https://logo.clearbit.com/lovable.dev',
+    logo: lovableLogo,
     url: 'https://lovable.ai',
     features: ['Full-stack development', 'React & TypeScript', 'Real-time preview'],
     gradient: 'from-[#7c3aed] to-[#db2777]',
@@ -23,7 +79,7 @@ const AI_TOOLS_DATA = [
     description: 'AI coding assistant that builds and deploys full-stack applications instantly',
     category: 'Coding & Development',
     icon: Code,
-    logo: 'https://logo.clearbit.com/bolt.new',
+    logo: boltLogo,
     url: 'https://bolt.new',
     features: ['Instant deployment', 'Full-stack apps', 'Live editing'],
     gradient: 'from-[#2563eb] to-[#0891b2]',
@@ -34,7 +90,7 @@ const AI_TOOLS_DATA = [
     description: 'AI pair programmer that helps you write code faster with intelligent suggestions',
     category: 'Coding & Development',
     icon: Code,
-    logo: 'https://logo.clearbit.com/github.com',
+    logo: github_copilotLogo,
     url: 'https://github.com/features/copilot',
     features: ['Code completion', 'Multi-language support', 'Context-aware'],
     gradient: 'from-[#24292e] to-[#6e40c9]',
@@ -45,7 +101,7 @@ const AI_TOOLS_DATA = [
     description: 'AI-first code editor built for pair programming with AI',
     category: 'Coding & Development',
     icon: Code,
-    logo: 'https://logo.clearbit.com/cursor.com',
+    logo: cursorLogo,
     url: 'https://cursor.sh',
     features: ['AI code generation', 'Refactoring', 'Bug fixing'],
     gradient: 'from-[#3d5afe] to-[#00e5ff]',
@@ -56,7 +112,7 @@ const AI_TOOLS_DATA = [
     description: 'AI coding assistant integrated into online IDE for collaborative development',
     category: 'Coding & Development',
     icon: Code,
-    logo: 'https://logo.clearbit.com/replit.com',
+    logo: replitLogo,
     url: 'https://replit.com',
     features: ['Online IDE', 'Code explanation', 'Debugging help'],
     gradient: 'from-[#f26b00] to-[#f2b000]',
@@ -67,7 +123,7 @@ const AI_TOOLS_DATA = [
     description: 'Free AI code completion tool supporting 70+ programming languages',
     category: 'Coding & Development',
     icon: Code,
-    logo: 'https://logo.clearbit.com/codeium.com',
+    logo: codeiumLogo,
     url: 'https://codeium.com',
     features: ['Free forever', '70+ languages', 'IDE integration'],
     gradient: 'from-[#09b6a2] to-[#2ecc71]',
@@ -78,7 +134,7 @@ const AI_TOOLS_DATA = [
     description: 'AI code assistant that predicts and suggests your next lines of code',
     category: 'Coding & Development',
     icon: Code,
-    logo: 'https://logo.clearbit.com/tabnine.com',
+    logo: tabnineLogo,
     url: 'https://tabnine.com',
     features: ['Local & cloud AI', 'Team learning', 'Privacy-focused'],
     gradient: 'from-[#22c1c3] to-[#fdbb2d]',
@@ -89,7 +145,7 @@ const AI_TOOLS_DATA = [
     description: 'AI coding companion from AWS with security scanning built-in',
     category: 'Coding & Development',
     icon: Code,
-    logo: 'https://logo.clearbit.com/aws.amazon.com',
+    logo: amazon_codewhispererLogo,
     url: 'https://aws.amazon.com/codewhisperer',
     features: ['Security scanning', 'AWS integration', 'Free for individuals'],
     gradient: 'from-[#ff9900] to-[#ff4f00]',
@@ -100,7 +156,7 @@ const AI_TOOLS_DATA = [
     description: 'AI-powered code snippet manager with intelligent search and organization',
     category: 'Coding & Development',
     icon: Code,
-    logo: 'https://logo.clearbit.com/pieces.app',
+    logo: piecesLogo,
     url: 'https://pieces.app',
     features: ['Code snippets', 'AI search', 'Context aware'],
     gradient: 'from-[#ff0080] to-[#7928ca]',
@@ -111,7 +167,7 @@ const AI_TOOLS_DATA = [
     description: 'AI system that translates natural language to code (powers GitHub Copilot)',
     category: 'Coding & Development',
     icon: Code,
-    logo: 'https://logo.clearbit.com/openai.com',
+    logo: codexLogo,
     url: 'https://openai.com/blog/openai-codex',
     features: ['Natural language to code', 'Multi-language', 'API access'],
     gradient: 'from-[#00a67e] to-[#000000]',
@@ -122,7 +178,7 @@ const AI_TOOLS_DATA = [
     description: 'AI-powered terminal autocomplete for developers',
     category: 'Coding & Development',
     icon: Code,
-    logo: 'https://logo.clearbit.com/fig.io',
+    logo: figLogo,
     url: 'https://fig.io',
     features: ['Terminal autocomplete', 'CLI tools', 'Team scripts'],
     gradient: 'from-[#6366f1] to-[#a855f7]',
@@ -133,7 +189,7 @@ const AI_TOOLS_DATA = [
     description: 'AI coding assistant that understands your entire codebase',
     category: 'Coding & Development',
     icon: Code,
-    logo: 'https://logo.clearbit.com/sourcegraph.com',
+    logo: sourcegraph_codyLogo,
     url: 'https://sourcegraph.com/cody',
     features: ['Codebase understanding', 'Code search', 'Refactoring'],
     gradient: 'from-[#ff352e] to-[#6b1111]',
@@ -146,7 +202,7 @@ const AI_TOOLS_DATA = [
       description: 'Advanced conversational AI for writing, coding, learning, and brainstorming',
       category: 'AI Chatbots & Writing',
       icon: Brain,
-      logo: 'https://logo.clearbit.com/openai.com',
+      logo: chatgptLogo,
       url: 'https://chat.openai.com',
       features: ['GPT-4 model', 'Multimodal', 'Custom GPTs'],
       gradient: 'from-[#10a37f] to-[#1a7f64]',
@@ -157,7 +213,7 @@ const AI_TOOLS_DATA = [
       description: 'Google\'s most capable AI for research, writing, and productivity',
       category: 'AI Chatbots & Writing',
       icon: Brain,
-      logo: 'https://logo.clearbit.com/google.com',
+      logo: google_geminiLogo,
       url: 'https://gemini.google.com',
       features: ['Multimodal AI', 'Google integration', 'Real-time info'],
       gradient: 'from-[#4285F4] via-[#9b72cb] to-[#d96570]',
@@ -168,7 +224,7 @@ const AI_TOOLS_DATA = [
       description: 'AI assistant by Anthropic focused on helpful, harmless, and honest conversations',
       category: 'AI Chatbots & Writing',
       icon: Brain,
-      logo: 'https://logo.clearbit.com/anthropic.com',
+      logo: claudeLogo,
       url: 'https://claude.ai',
       features: ['200K context window', 'Long documents', 'Safe & helpful'],
       gradient: 'from-[#d97757] to-[#ae5630]',
@@ -179,7 +235,7 @@ const AI_TOOLS_DATA = [
       description: 'AI-powered assistant integrated into Microsoft 365 apps',
       category: 'AI Chatbots & Writing',
       icon: Brain,
-      logo: 'https://logo.clearbit.com/microsoft.com',
+      logo: microsoft_copilotLogo,
       url: 'https://copilot.microsoft.com',
       features: ['Office integration', 'Web search', 'Image generation'],
       gradient: 'from-[#0078d4] to-[#00bcf2]',
@@ -190,7 +246,7 @@ const AI_TOOLS_DATA = [
       description: 'AI-powered search engine that provides cited answers with sources',
       category: 'AI Chatbots & Writing',
       icon: Search,
-      logo: 'https://logo.clearbit.com/perplexity.ai',
+      logo: perplexityLogo,
       url: 'https://perplexity.ai',
       features: ['Cited sources', 'Research mode', 'Real-time search'],
       gradient: 'from-[#1fb8cd] to-[#125e68]',
@@ -201,7 +257,7 @@ const AI_TOOLS_DATA = [
       description: 'AI writing assistant for grammar, spelling, and style improvements',
       category: 'AI Chatbots & Writing',
       icon: FileText,
-      logo: 'https://logo.clearbit.com/grammarly.com',
+      logo: grammarlyLogo,
       url: 'https://grammarly.com',
       features: ['Grammar check', 'Tone detection', 'Plagiarism checker'],
       gradient: 'from-[#00d182] to-[#00b06f]',
@@ -212,7 +268,7 @@ const AI_TOOLS_DATA = [
       description: 'AI paraphrasing and summarization tool for academic writing',
       category: 'AI Chatbots & Writing',
       icon: FileText,
-      logo: 'https://logo.clearbit.com/quillbot.com',
+      logo: quillbotLogo,
       url: 'https://quillbot.com',
       features: ['Paraphrasing', 'Summarization', 'Citation generator'],
       gradient: 'from-[#3b873e] to-[#2c662e]',
@@ -223,7 +279,7 @@ const AI_TOOLS_DATA = [
       description: 'AI content creation platform for marketing and business writing',
       category: 'AI Chatbots & Writing',
       icon: FileText,
-      logo: 'https://logo.clearbit.com/jasper.ai',
+      logo: jasperLogo,
       url: 'https://jasper.ai',
       features: ['Content templates', 'Brand voice', 'SEO optimization'],
       gradient: 'from-[#6700eb] to-[#ff3b8d]',
@@ -234,7 +290,7 @@ const AI_TOOLS_DATA = [
       description: 'AI copywriting tool for marketing content and sales copy',
       category: 'AI Chatbots & Writing',
       icon: FileText,
-      logo: 'https://logo.clearbit.com/copy.ai',
+      logo: copyaiLogo,
       url: 'https://copy.ai',
       features: ['Marketing copy', 'Social media', 'Email templates'],
       gradient: 'from-[#2b59ff] to-[#7000ff]',
@@ -245,7 +301,7 @@ const AI_TOOLS_DATA = [
       description: 'AI assistant built into Notion for writing, brainstorming, and organizing',
       category: 'AI Chatbots & Writing',
       icon: FileText,
-      logo: 'https://logo.clearbit.com/notion.so',
+      logo: notion_aiLogo,
       url: 'https://notion.so/product/ai',
       features: ['Notion integration', 'Writing help', 'Summaries'],
       gradient: 'from-[#37352f] to-[#000000]',
@@ -258,7 +314,7 @@ const AI_TOOLS_DATA = [
       description: 'AI-powered design platform with Magic Design and text-to-image',
       category: 'Design & Creative',
       icon: Palette,
-      logo: 'https://logo.clearbit.com/canva.com',
+      logo: canvaLogo,
       url: 'https://canva.com',
       features: ['Magic Design', 'Background remover', 'Templates'],
       gradient: 'from-[#00c4cc] to-[#7d2ae8]',
@@ -269,7 +325,7 @@ const AI_TOOLS_DATA = [
       description: 'AI art generator creating stunning images from text descriptions',
       category: 'Design & Creative',
       icon: Palette,
-      logo: 'https://logo.clearbit.com/midjourney.com',
+      logo: midjourneyLogo,
       url: 'https://midjourney.com',
       features: ['High-quality images', 'Artistic styles', 'Discord-based'],
       gradient: 'from-[#000000] to-[#2c3e50]',
@@ -280,7 +336,7 @@ const AI_TOOLS_DATA = [
       description: 'OpenAI\'s advanced image generation model with precise prompt following',
       category: 'Design & Creative',
       icon: Palette,
-      logo: 'https://logo.clearbit.com/openai.com',
+      logo: dalle3Logo,
       url: 'https://openai.com/dall-e-3',
       features: ['High resolution', 'ChatGPT integration', 'Safe generation'],
       gradient: 'from-[#00a67e] to-[#000000]',
@@ -291,7 +347,7 @@ const AI_TOOLS_DATA = [
       description: 'AI art generator focused on game assets and creative designs',
       category: 'Design & Creative',
       icon: Palette,
-      logo: 'https://logo.clearbit.com/leonardo.ai',
+      logo: leonardoLogo,
       url: 'https://leonardo.ai',
       features: ['Game assets', 'Character design', 'Consistent style'],
       gradient: 'from-[#ff4d4d] to-[#ff9900]',
@@ -302,7 +358,7 @@ const AI_TOOLS_DATA = [
       description: 'Open-source AI image generation with full control and customization',
       category: 'Design & Creative',
       icon: Palette,
-      logo: 'https://logo.clearbit.com/stability.ai',
+      logo: stable_diffusionLogo,
       url: 'https://stability.ai',
       features: ['Open source', 'Customizable', 'Local deployment'],
       gradient: 'from-[#6d28d9] to-[#4338ca]',
@@ -313,7 +369,7 @@ const AI_TOOLS_DATA = [
       description: 'Adobe\'s AI for generating images, text effects, and design variations',
       category: 'Design & Creative',
       icon: Palette,
-      logo: 'https://logo.clearbit.com/adobe.com',
+      logo: adobe_fireflyLogo,
       url: 'https://firefly.adobe.com',
       features: ['Adobe integration', 'Commercial safe', 'Text effects'],
       gradient: 'from-[#fa0f00] to-[#ff9500]',
@@ -324,7 +380,7 @@ const AI_TOOLS_DATA = [
       description: 'AI features in Figma for design automation and smart layouts',
       category: 'Design & Creative',
       icon: Palette,
-      logo: 'https://logo.clearbit.com/figma.com',
+      logo: figma_aiLogo,
       url: 'https://figma.com',
       features: ['Auto-layout', 'Design systems', 'Prototyping'],
       gradient: 'from-[#f24e1e] via-[#a259ff] to-[#1abcfe]',
@@ -335,7 +391,7 @@ const AI_TOOLS_DATA = [
       description: 'AI-powered background removal tool for images',
       category: 'Design & Creative',
       icon: Palette,
-      logo: 'https://logo.clearbit.com/remove.bg',
+      logo: removebgLogo,
       url: 'https://remove.bg',
       features: ['Instant removal', 'Bulk processing', 'API access'],
       gradient: 'from-[#2980b9] to-[#3498db]',
@@ -348,7 +404,7 @@ const AI_TOOLS_DATA = [
       description: 'AI video editing with text-to-video, image-to-video, and more',
       category: 'Video & Audio',
       icon: Video,
-      logo: 'https://logo.clearbit.com/runwayml.com',
+      logo: runwayLogo,
       url: 'https://runwayml.com',
       features: ['Text-to-video', 'Video editing', 'Motion tracking'],
       gradient: 'from-[#000000] to-[#555555]',
@@ -359,7 +415,7 @@ const AI_TOOLS_DATA = [
       description: 'AI voice generation with ultra-realistic text-to-speech',
       category: 'Video & Audio',
       icon: Music,
-      logo: 'https://logo.clearbit.com/elevenlabs.io',
+      logo: elevenlabsLogo,
       url: 'https://elevenlabs.io',
       features: ['Voice cloning', 'Text-to-speech', 'Multiple languages'],
       gradient: 'from-[#f4a261] to-[#e76f51]',
@@ -370,7 +426,7 @@ const AI_TOOLS_DATA = [
       description: 'AI video and podcast editing by editing text transcripts',
       category: 'Video & Audio',
       icon: Video,
-      logo: 'https://logo.clearbit.com/descript.com',
+      logo: descriptLogo,
       url: 'https://descript.com',
       features: ['Text-based editing', 'Voice cloning', 'Transcription'],
       gradient: 'from-[#0052cc] to-[#00b8d9]',
@@ -381,7 +437,7 @@ const AI_TOOLS_DATA = [
       description: 'AI video creation from long-form content and scripts',
       category: 'Video & Audio',
       icon: Video,
-      logo: 'https://logo.clearbit.com/pictory.ai',
+      logo: pictoryLogo,
       url: 'https://pictory.ai',
       features: ['Script-to-video', 'Auto-captions', 'Highlights'],
       gradient: 'from-[#4a148c] to-[#7b1fa2]',
@@ -392,7 +448,7 @@ const AI_TOOLS_DATA = [
       description: 'AI video generation with virtual avatars and voiceovers',
       category: 'Video & Audio',
       icon: Video,
-      logo: 'https://logo.clearbit.com/synthesia.io',
+      logo: synthesiaLogo,
       url: 'https://synthesia.io',
       features: ['AI avatars', '120+ languages', 'Professional videos'],
       gradient: 'from-[#0ea5e9] to-[#2563eb]',
@@ -403,7 +459,7 @@ const AI_TOOLS_DATA = [
       description: 'AI voice generator for podcasts, videos, and presentations',
       category: 'Video & Audio',
       icon: Music,
-      logo: 'https://logo.clearbit.com/murf.ai',
+      logo: murfLogo,
       url: 'https://murf.ai',
       features: ['Voice-over studio', '120+ voices', 'Voice changer'],
       gradient: 'from-[#059669] to-[#10b981]',
@@ -416,7 +472,7 @@ const AI_TOOLS_DATA = [
       description: 'AI-powered search engine for scientific research papers',
       category: 'Research & Learning',
       icon: Search,
-      logo: 'https://logo.clearbit.com/consensus.app',
+      logo: consensusLogo,
       url: 'https://consensus.app',
       features: ['Paper search', 'Cited answers', 'Research summaries'],
       gradient: 'from-[#1e40af] to-[#3b82f6]',
@@ -427,7 +483,7 @@ const AI_TOOLS_DATA = [
       description: 'AI research assistant that helps analyze research papers',
       category: 'Research & Learning',
       icon: Search,
-      logo: 'https://logo.clearbit.com/elicit.org',
+      logo: elicitLogo,
       url: 'https://elicit.org',
       features: ['Paper analysis', 'Literature review', 'Data extraction'],
       gradient: 'from-[#5b21b6] to-[#7c3aed]',
@@ -438,7 +494,7 @@ const AI_TOOLS_DATA = [
       description: 'AI tool showing how research papers have been cited',
       category: 'Research & Learning',
       icon: BookOpen,
-      logo: 'https://logo.clearbit.com/scite.ai',
+      logo: sciteLogo,
       url: 'https://scite.ai',
       features: ['Citation context', 'Paper reliability', 'Research dashboard'],
       gradient: 'from-[#0ea5e9] to-[#06b6d4]',
@@ -449,7 +505,7 @@ const AI_TOOLS_DATA = [
       description: 'AI that explains complex research papers in simple terms',
       category: 'Research & Learning',
       icon: BookOpen,
-      logo: 'https://logo.clearbit.com/explainpaper.com',
+      logo: explainpaperLogo,
       url: 'https://explainpaper.com',
       features: ['Paper explanations', 'Highlight to explain', 'Academic support'],
       gradient: 'from-[#f97316] to-[#fb923c]',
@@ -460,7 +516,7 @@ const AI_TOOLS_DATA = [
       description: 'AI-powered flashcards and study tools for exam preparation',
       category: 'Research & Learning',
       icon: BookOpen,
-      logo: 'https://logo.clearbit.com/quizlet.com',
+      logo: quizletLogo,
       url: 'https://quizlet.com',
       features: ['AI flashcards', 'Practice tests', 'Study modes'],
       gradient: 'from-[#3b82f6] to-[#60a5fa]',
@@ -471,7 +527,7 @@ const AI_TOOLS_DATA = [
       description: 'Computational knowledge engine for math, science, and engineering',
       category: 'Research & Learning',
       icon: Calculator,
-      logo: 'https://logo.clearbit.com/wolframalpha.com',
+      logo: wolframLogo,
       url: 'https://wolframalpha.com',
       features: ['Math solver', 'Step-by-step', 'Data analysis'],
       gradient: 'from-[#da291c] to-[#a51c12]',
@@ -482,7 +538,7 @@ const AI_TOOLS_DATA = [
       description: 'AI that summarizes research papers and extracts key information',
       category: 'Research & Learning',
       icon: BookOpen,
-      logo: 'https://logo.clearbit.com/scholarcy.com',
+      logo: scholarcyLogo,
       url: 'https://scholarcy.com',
       features: ['Paper summaries', 'Key points', 'Flashcards'],
       gradient: 'from-[#0369a1] to-[#0ea5e9]',
@@ -493,7 +549,7 @@ const AI_TOOLS_DATA = [
       description: 'AI-powered academic search engine by Allen Institute',
       category: 'Research & Learning',
       icon: Search,
-      logo: 'https://logo.clearbit.com/semanticscholar.org',
+      logo: semantic_scholarLogo,
       url: 'https://semanticscholar.org',
       features: ['Research discovery', 'Paper insights', 'Citation analysis'],
       gradient: 'from-[#1d4ed8] to-[#3b82f6]',
@@ -506,7 +562,7 @@ const AI_TOOLS_DATA = [
       description: 'AI presentation maker that creates beautiful decks from text',
       category: 'Presentation & Productivity',
       icon: Presentation,
-      logo: 'https://logo.clearbit.com/gamma.app',
+      logo: gammaLogo,
       url: 'https://gamma.app',
       features: ['Auto-design', 'Interactive content', 'Instant formatting'],
       gradient: 'from-[#7c3aed] to-[#db2777]',
@@ -517,7 +573,7 @@ const AI_TOOLS_DATA = [
       description: 'AI-powered presentation software with smart slide design',
       category: 'Presentation & Productivity',
       icon: Presentation,
-      logo: 'https://logo.clearbit.com/beautiful.ai',
+      logo: beautiful_aiLogo,
       url: 'https://beautiful.ai',
       features: ['Smart templates', 'Auto-formatting', 'Team collaboration'],
       gradient: 'from-[#2563eb] to-[#4f46e5]',
@@ -528,7 +584,7 @@ const AI_TOOLS_DATA = [
       description: 'AI presentation generator with professional templates',
       category: 'Presentation & Productivity',
       icon: Presentation,
-      logo: 'https://logo.clearbit.com/slidesgo.com',
+      logo: slidesgoLogo,
       url: 'https://slidesgo.com',
       features: ['AI templates', 'Customizable', 'Free & premium'],
       gradient: 'from-[#f97316] to-[#ea580c]',
@@ -539,7 +595,7 @@ const AI_TOOLS_DATA = [
       description: 'AI-powered storytelling format for presentations and documents',
       category: 'Presentation & Productivity',
       icon: Presentation,
-      logo: 'https://logo.clearbit.com/tome.app',
+      logo: tomeLogo,
       url: 'https://tome.app',
       features: ['AI storytelling', 'Multimedia', 'Interactive'],
       gradient: 'from-[#000000] to-[#333333]',
@@ -550,7 +606,7 @@ const AI_TOOLS_DATA = [
       description: 'AI meeting assistant with real-time transcription and notes',
       category: 'Presentation & Productivity',
       icon: FileText,
-      logo: 'https://logo.clearbit.com/otter.ai',
+      logo: otterLogo,
       url: 'https://otter.ai',
       features: ['Live transcription', 'Meeting notes', 'Action items'],
       gradient: 'from-[#0ea5e9] to-[#0284c7]',
@@ -561,7 +617,7 @@ const AI_TOOLS_DATA = [
       description: 'AI-powered task manager with intelligent scheduling',
       category: 'Presentation & Productivity',
       icon: FileText,
-      logo: 'https://logo.clearbit.com/todoist.com',
+      logo: todoistLogo,
       url: 'https://todoist.com',
       features: ['Smart scheduling', 'Task suggestions', 'Productivity insights'],
       gradient: 'from-[#e44232] to-[#b83428]',
@@ -574,7 +630,7 @@ const AI_TOOLS_DATA = [
       description: 'AI data analyst that interprets and visualizes your data',
       category: 'Data & Analytics',
       icon: Database,
-      logo: 'https://logo.clearbit.com/julius.ai',
+      logo: juliusLogo,
       url: 'https://julius.ai',
       features: ['Data analysis', 'Visualizations', 'Natural language queries'],
       gradient: 'from-[#4f46e5] to-[#7c3aed]',
@@ -585,7 +641,7 @@ const AI_TOOLS_DATA = [
       description: 'AI-powered analytics and business intelligence platform',
       category: 'Data & Analytics',
       icon: Database,
-      logo: 'https://logo.clearbit.com/tableau.com',
+      logo: tableauLogo,
       url: 'https://tableau.com',
       features: ['Data visualization', 'AI insights', 'Dashboards'],
       gradient: 'from-[#e97627] via-[#00a8e1] to-[#f4ae1b]',
@@ -596,7 +652,7 @@ const AI_TOOLS_DATA = [
       description: 'AI platform for automated machine learning and predictive analytics',
       category: 'Data & Analytics',
       icon: Database,
-      logo: 'https://logo.clearbit.com/datarobot.com',
+      logo: datarobotLogo,
       url: 'https://datarobot.com',
       features: ['AutoML', 'Model deployment', 'Predictions'],
       gradient: 'from-[#ff4d4d] to-[#ff9900]',
@@ -607,7 +663,7 @@ const AI_TOOLS_DATA = [
       description: 'AI for text analysis and data extraction from documents',
       category: 'Data & Analytics',
       icon: Database,
-      logo: 'https://logo.clearbit.com/monkeylearn.com',
+      logo: monkeylearnLogo,
       url: 'https://monkeylearn.com',
       features: ['Text analysis', 'Sentiment analysis', 'Data extraction'],
       gradient: 'from-[#00d1b2] to-[#00b894]',
@@ -620,7 +676,7 @@ const AI_TOOLS_DATA = [
       description: 'AI translator with superior quality for professional translations',
       category: 'Language & Translation',
       icon: Globe,
-      logo: 'https://logo.clearbit.com/deepl.com',
+      logo: deeplLogo,
       url: 'https://deepl.com',
       features: ['High-quality translation', '31 languages', 'Document translation'],
       gradient: 'from-[#0f2b46] to-[#0c1f32]',
@@ -631,7 +687,7 @@ const AI_TOOLS_DATA = [
       description: 'AI-powered language learning with GPT-4 integration',
       category: 'Language & Translation',
       icon: Globe,
-      logo: 'https://logo.clearbit.com/duolingo.com',
+      logo: duolingoLogo,
       url: 'https://duolingo.com',
       features: ['AI tutor', 'Personalized learning', 'Practice conversations'],
       gradient: 'from-[#58cc02] to-[#46a302]',
@@ -671,29 +727,6 @@ export const AIToolsListSection = memo(function AIToolsListSection() {
       <div className="absolute bottom-0 left-0 w-96 h-96 bg-cyan-500/5 rounded-full blur-3xl" />
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Section Header with Logo */}
-        <motion.div 
-          initial={{ opacity: 0, y: -20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="text-center mb-16"
-        >
-          <div className="relative inline-block mb-6">
-            <div className="absolute inset-0 bg-purple-500/20 blur-3xl rounded-full animate-pulse" />
-            <img 
-              src={aiToolsLogo} 
-              alt="AI Tools Section" 
-              className="relative w-32 h-32 md:w-40 md:h-40 mx-auto object-contain drop-shadow-2xl"
-            />
-          </div>
-          <h2 className="text-3xl md:text-5xl font-extrabold text-heading mb-4 bg-gradient-to-r from-purple-400 via-cyan-400 to-purple-400 bg-clip-text text-transparent animate-gradient">
-            AI Tools Ecosystem
-          </h2>
-          <p className="text-lg text-text-muted max-w-2xl mx-auto">
-            Discover and master the most powerful AI tools curated for modern engineering students and tech professionals.
-          </p>
-        </motion.div>
-
 
           {/* Search bar */}
           <div className="max-w-2xl mx-auto relative group">
