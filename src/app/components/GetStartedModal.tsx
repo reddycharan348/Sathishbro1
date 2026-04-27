@@ -141,7 +141,7 @@ export function GetStartedModal({ isOpen, onClose }: GetStartedModalProps) {
 
   return (
     <Dialog open={isOpen} onOpenChange={handleClose}>
-      <DialogContent className="w-[95vw] sm:max-w-[500px] bg-card-bg border-card-border text-heading p-4 sm:p-6 theme-transition">
+      <DialogContent className="w-[95%] sm:max-w-[500px] bg-card-bg border-card-border text-heading p-4 sm:p-6 theme-transition">
         <DialogHeader>
           <DialogTitle className="text-xl sm:text-2xl bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent flex items-center gap-2">
             <Rocket className="w-5 h-5 sm:w-6 sm:h-6 text-blue-400" />
