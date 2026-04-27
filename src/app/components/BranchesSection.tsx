@@ -318,7 +318,7 @@ export const BranchesSection = memo(function BranchesSection() {
   ];
 
   return (
-    <div className="py-20 bg-gradient-to-b from-page-bg via-surface to-page-bg relative overflow-hidden">
+    <section id="branches-main" className="py-24 bg-gradient-to-b from-page-bg via-surface to-page-bg relative overflow-hidden scroll-mt-20">
       {/* Background effects */}
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute top-0 right-1/4 w-96 h-96 bg-blue-600/10 rounded-full blur-3xl" />
@@ -332,15 +332,32 @@ export const BranchesSection = memo(function BranchesSection() {
       </div>
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-
-
+        {/* SEO Header */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="text-center mb-20"
+        >
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-600/10 border border-blue-500/20 text-blue-400 text-sm font-bold mb-4">
+            <GraduationCap className="w-4 h-4" />
+            <span>Engineering Career Guide</span>
+          </div>
+          <h1 className="text-5xl md:text-7xl font-black text-heading mb-8 tracking-tight">
+            Explore <span className="text-blue-500">Engineering</span> Branches
+          </h1>
+          <p className="text-xl text-text-muted max-w-3xl mx-auto leading-relaxed">
+            Deep dive into curriculum, skills, and career opportunities for every engineering discipline. 
+            Discover which path aligns with your passion and the future of technology.
+          </p>
+        </motion.div>
 
         {/* ── 6-stat overview row ── */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4 mb-12"
+          className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4 mb-16"
         >
           {overallStats.map((stat, i) => (
             <motion.div
