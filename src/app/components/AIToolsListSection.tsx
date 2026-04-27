@@ -1,7 +1,6 @@
 import { ExternalLink, Sparkles, Code, Palette, FileText, Brain, Video, Music, Database, Search, BookOpen, Presentation, Calculator, Globe, Search as SearchIcon } from 'lucide-react';
 import { motion } from 'motion/react';
 import { useState, useMemo, memo } from 'react';
-import { ImageWithFallback } from './figma/ImageWithFallback';
 import lovableLogo from '@/assets/tools/lovable.png';
 import boltLogo from '@/assets/tools/bolt.png';
 import github_copilotLogo from '@/assets/tools/github_copilot.png';
@@ -727,9 +726,40 @@ export const AIToolsListSection = memo(function AIToolsListSection() {
       <div className="absolute bottom-0 left-0 w-96 h-96 bg-cyan-500/5 rounded-full blur-3xl" />
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Header */}
+        <div className="text-center mb-16">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="inline-flex items-center gap-2 px-4 py-2 bg-purple-500/10 rounded-full border border-purple-500/20 mb-6"
+          >
+            <Sparkles className="w-4 h-4 text-purple-400" />
+            <span className="text-sm font-medium text-purple-400">Curated AI Ecosystem</span>
+          </motion.div>
+          <motion.h2
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.1 }}
+            viewport={{ once: true }}
+            className="text-4xl md:text-5xl font-bold text-heading mb-6"
+          >
+            Ultimate AI Tools <span className="bg-gradient-to-r from-purple-400 to-cyan-400 bg-clip-text text-transparent">Directory</span>
+          </motion.h2>
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.2 }}
+            viewport={{ once: true }}
+            className="text-xl text-text-muted max-w-3xl mx-auto leading-relaxed"
+          >
+            Explore our hand-picked collection of AI tools across coding, design, research, and productivity 
+            to supercharge your engineering workflow and learning experience.
+          </motion.p>
+        </div>
 
           {/* Search bar */}
-          <div className="max-w-2xl mx-auto relative group">
+          <div className="max-w-2xl mx-auto relative group mb-12">
             <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
               <SearchIcon className="h-5 w-5 text-text-muted group-focus-within:text-purple-400 transition-colors" />
             </div>
@@ -738,8 +768,11 @@ export const AIToolsListSection = memo(function AIToolsListSection() {
               placeholder="Search for tools, features, or tasks..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="block w-full pl-12 pr-4 py-4 bg-surface border border-surface-border rounded-2xl text-heading placeholder:text-text-muted focus:ring-2 focus:ring-purple-500/20 focus:border-purple-500 transition-all shadow-sm group-hover:shadow-md theme-transition"
+              className="block w-full pl-12 pr-4 py-4 bg-surface/50 backdrop-blur-md border border-surface-border rounded-2xl text-heading placeholder:text-text-muted focus:ring-4 focus:ring-purple-500/10 focus:border-purple-500 transition-all shadow-sm group-hover:shadow-md theme-transition"
             />
+            <div className="absolute right-4 top-1/2 -translate-y-1/2 px-2 py-1 bg-surface-hover rounded text-[10px] text-text-muted border border-surface-border hidden sm:block">
+              {filteredTools.length} Tools
+            </div>
           </div>
         
         {/* Category filter */}
@@ -749,10 +782,10 @@ export const AIToolsListSection = memo(function AIToolsListSection() {
               <button
                 key={category.id}
                 onClick={() => setSelectedCategory(category.id)}
-                className={`px-5 py-2.5 rounded-xl border transition-all text-sm ${
+                className={`px-5 py-2.5 rounded-xl border transition-all duration-300 text-sm flex items-center gap-2 transform active:scale-95 ${
                   selectedCategory === category.id
-                    ? 'bg-purple-600 border-purple-500 text-white shadow-lg shadow-purple-500/20'
-                    : 'bg-surface text-text-secondary border border-surface-border hover:border-blue-500/40 hover:text-heading'
+                    ? 'bg-gradient-to-r from-purple-600 to-indigo-600 border-purple-500 text-white shadow-lg shadow-purple-500/30 -translate-y-0.5'
+                    : 'bg-surface/50 backdrop-blur-sm text-text-secondary border-surface-border hover:border-purple-500/40 hover:text-heading hover:bg-surface theme-transition'
                 }`}
               >
                 {category.name}
@@ -765,20 +798,20 @@ export const AIToolsListSection = memo(function AIToolsListSection() {
         {/* Stats */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-12">
           <div className="bg-surface backdrop-blur-sm border border-surface-border rounded-xl p-4 text-center">
-            <div className="text-2xl text-heading mb-1">{filteredTools.length}</div>
-            <div className="text-xs text-text-muted">AI Tools Available</div>
+            <div className="text-3xl font-bold text-heading mb-1">{filteredTools.length}</div>
+            <div className="text-base text-text-muted">AI Tools Available</div>
           </div>
           <div className="bg-surface backdrop-blur-sm border border-surface-border rounded-xl p-4 text-center">
-            <div className="text-2xl text-heading mb-1">{categories.length - 1}</div>
-            <div className="text-xs text-text-muted">Categories</div>
+            <div className="text-3xl font-bold text-heading mb-1">{categories.length - 1}</div>
+            <div className="text-base text-text-muted">Categories</div>
           </div>
           <div className="bg-surface backdrop-blur-sm border border-surface-border rounded-xl p-4 text-center">
-            <div className="text-2xl text-heading mb-1">{filteredTools.filter(t => t.popular).length}</div>
-            <div className="text-xs text-text-muted">Popular Tools</div>
+            <div className="text-3xl font-bold text-heading mb-1">{filteredTools.filter(t => t.popular).length}</div>
+            <div className="text-base text-text-muted">Popular Tools</div>
           </div>
           <div className="bg-surface backdrop-blur-sm border border-surface-border rounded-xl p-4 text-center">
-            <div className="text-2xl text-heading mb-1">Free</div>
-            <div className="text-xs text-text-muted">Most Have Free Tier</div>
+            <div className="text-3xl font-bold text-heading mb-1">Free</div>
+            <div className="text-base text-text-muted">Most Have Free Tier</div>
           </div>
         </div>
 
@@ -795,10 +828,10 @@ export const AIToolsListSection = memo(function AIToolsListSection() {
             >
               {/* Popular badge */}
               {tool.popular && (
-                <div className="absolute top-4 right-4">
-                  <div className="px-2 py-1 bg-amber-500/10 border border-amber-500/30 rounded-full text-xs text-amber-400 flex items-center gap-1">
+                <div className="absolute top-4 right-4 z-20">
+                  <div className="px-2.5 py-1 bg-amber-500/10 backdrop-blur-md border border-amber-500/30 rounded-full text-[10px] font-bold text-amber-500 flex items-center gap-1 shadow-lg shadow-amber-500/10">
                     <Sparkles className="w-3 h-3" />
-                    Popular
+                    POPULAR
                   </div>
                 </div>
               )}
@@ -812,28 +845,31 @@ export const AIToolsListSection = memo(function AIToolsListSection() {
                   </div>
 
                   {/* Large Brand Logo Container */}
-                  <div className={`w-20 h-20 rounded-2xl overflow-hidden p-[2px] bg-gradient-to-br ${tool.gradient} shadow-xl transform group-hover:scale-110 transition-transform duration-300`}>
-                    <div className="w-full h-full rounded-[14px] bg-white dark:bg-slate-900 p-2 overflow-hidden flex items-center justify-center">
+                  <div className={`w-20 h-20 rounded-2xl overflow-hidden p-[2px] bg-gradient-to-br ${tool.gradient} shadow-xl transform group-hover:scale-110 group-hover:rotate-3 transition-all duration-500`}>
+                    <div className="w-full h-full rounded-[14px] bg-white dark:bg-slate-900 p-2 overflow-hidden flex items-center justify-center relative">
                       {tool.logo ? (
                         <img 
                           src={tool.logo} 
                           alt={tool.name} 
-                          className="w-full h-full object-contain"
+                          className="w-full h-full object-contain relative z-10 transition-opacity duration-300"
+                          loading="lazy"
+                          decoding="async"
                           onError={(e) => {
-                            // If Clearbit fails, replace with the category icon
                             const target = e.target as HTMLImageElement;
-                            target.style.display = 'none';
+                            target.classList.add('hidden');
                             const fallback = target.nextElementSibling as HTMLElement;
-                            if (fallback) fallback.style.display = 'flex';
+                            if (fallback) fallback.classList.remove('hidden');
                           }}
                         />
                       ) : null}
                       <div 
-                        className="w-full h-full items-center justify-center hidden"
-                        style={{ display: tool.logo ? 'none' : 'flex' }}
+                        className={`w-full h-full items-center justify-center ${tool.logo ? 'hidden' : 'flex'}`}
                       >
                         <tool.icon className={`w-10 h-10 text-transparent bg-gradient-to-br ${tool.gradient} bg-clip-text`} />
                       </div>
+                      
+                      {/* Inner glow effect */}
+                      <div className={`absolute inset-0 bg-gradient-to-br ${tool.gradient} opacity-0 group-hover:opacity-5 transition-opacity duration-500`} />
                     </div>
                   </div>
                 </div>
@@ -841,10 +877,10 @@ export const AIToolsListSection = memo(function AIToolsListSection() {
 
               {/* Content */}
               <div className="text-center">
-                <h3 className="text-xl font-bold text-heading mb-2 group-hover:text-purple-400 transition-colors">
+                <h3 className="text-2xl font-black text-heading mb-3 group-hover:text-purple-400 transition-colors">
                   {tool.name}
                 </h3>
-                <p className="text-sm text-text-muted mb-6 line-clamp-2">
+                <p className="text-lg text-text-muted leading-relaxed mb-4 line-clamp-2">
                   {tool.description}
                 </p>
               </div>
@@ -893,11 +929,14 @@ export const AIToolsListSection = memo(function AIToolsListSection() {
               Want More AI Learning Resources?
             </h3>
             <p className="text-text-muted mb-6 max-w-2xl mx-auto">
-              Join EduPulseX to get personalized AI tool recommendations, exclusive tutorials, 
+              Join Tectonix to get personalized AI tool recommendations, exclusive tutorials, 
               and learn how to integrate these tools into your study workflow.
             </p>
-            <button className="px-8 py-4 bg-gradient-to-r from-purple-500 to-cyan-600 text-white rounded-xl hover:shadow-2xl hover:shadow-purple-500/50 transition-all transform hover:scale-105">
-              Explore EduPulseX AI
+            <button 
+              onClick={() => window.dispatchEvent(new CustomEvent('open-get-started'))}
+              className="px-8 py-4 bg-gradient-to-r from-purple-500 to-cyan-600 text-white rounded-xl hover:shadow-2xl hover:shadow-purple-500/50 transition-all transform hover:scale-105"
+            >
+              Explore Tectonix AI
             </button>
           </div>
         </div>

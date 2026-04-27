@@ -4,6 +4,32 @@ import { logger } from "npm:hono/logger";
 import * as kv from "./kv_store.tsx";
 const app = new Hono();
 
+// Basic Anti-Hacker Rate Limiter logic
+const rateLimitMap = new Map<string, number>();
+const BUCKET_TIME_IN_MS = 60000; // 1 minute
+const MAX_REQ_PER_MIN = 1000; // High concurrency allowance as requested
+
+app.use(async (c, next) => {
+  const ip = c.req.header('x-forwarded-for') || 'anonymous_ip';
+  const now = Date.now();
+  const currentKey = `${ip}_${Math.floor(now / BUCKET_TIME_IN_MS)}`;
+
+  const currentCount = rateLimitMap.get(currentKey) || 0;
+  if (currentCount > MAX_REQ_PER_MIN) {
+    return c.json({ error: "Too many requests. Please try again later." }, 429);
+  }
+  
+  rateLimitMap.set(currentKey, currentCount + 1);
+
+  // Security Headers
+  c.header('X-Frame-Options', 'DENY');
+  c.header('X-Content-Type-Options', 'nosniff');
+  c.header('X-XSS-Protection', '1; mode=block');
+  c.header('Strict-Transport-Security', 'max-age=31536000; includeSubDomains');
+  
+  await next();
+});
+
 // Enable logger
 app.use('*', logger(console.log));
 

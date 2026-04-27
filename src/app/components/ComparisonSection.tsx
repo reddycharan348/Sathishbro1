@@ -74,7 +74,7 @@ export function ComparisonSection() {
             Why We're Different
           </div>
           <h2 className="text-4xl sm:text-5xl text-heading mb-4">
-            EduPulseX vs <span className="bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">Traditional Learning</span>
+            Tectonix vs <span className="bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">Traditional Learning</span>
           </h2>
           <p className="text-lg text-text-muted max-w-2xl mx-auto">
             See why 10,000+ students choose our modern, AI-powered approach
@@ -101,7 +101,7 @@ export function ComparisonSection() {
             </div>
             <div className="p-6 border-l border-surface-border bg-gradient-to-br from-blue-600/10 to-cyan-500/10 relative">
               <div className="flex items-center gap-2">
-                <span className="text-lg text-heading">EduPulseX</span>
+                <span className="text-lg text-heading">Tectonix</span>
                 <Zap className="w-5 h-5 text-cyan-400" />
               </div>
               {/* Badge */}
@@ -150,7 +150,7 @@ export function ComparisonSection() {
                   </div>
                 </div>
 
-                {/* EduPulseX column */}
+                {/* Tectonix column */}
                 <div className="p-6 border-l border-surface-border bg-gradient-to-br from-blue-600/5 to-cyan-500/5">
                   <div className="flex items-center gap-2">
                     {item.edupulse === true ? (

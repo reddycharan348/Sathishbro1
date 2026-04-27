@@ -31,6 +31,7 @@ export const BranchesSection = memo(function BranchesSection() {
       color: 'from-blue-600 to-cyan-500',
       accentColor: 'blue',
       emoji: '💻',
+      imageUrl: '/branch-cse.png',
       skills: ['C, Java, Python', 'Data Structures & Algorithms', 'Web Development (MERN/MEAN)', 'AI / ML Fundamentals', 'Software Testing & DevOps', 'Database Management (SQL/NoSQL)', 'Operating Systems & Networking'],
       skillLevels: [90, 95, 85, 70, 75, 80, 65],
       bgColor: 'bg-blue-600/5',
@@ -71,6 +72,7 @@ export const BranchesSection = memo(function BranchesSection() {
       color: 'from-blue-600 to-cyan-500',
       accentColor: 'blue',
       emoji: '🤖',
+      imageUrl: '/branch-ai-ds.png',
       skills: ['Python & R Programming', 'ML / DL Algorithms', 'NLP & Computer Vision', 'Big Data Analytics', 'AI Deployment & MLOps', 'Statistical Modeling', 'Data Visualization'],
       skillLevels: [92, 88, 82, 78, 72, 85, 80],
       bgColor: 'bg-blue-600/5',
@@ -111,6 +113,7 @@ export const BranchesSection = memo(function BranchesSection() {
       color: 'from-blue-600 to-cyan-500',
       accentColor: 'blue',
       emoji: '📡',
+      imageUrl: '/branch-ece.png',
       skills: ['Analog & Digital Electronics', 'VLSI Design & Verification', 'Embedded Systems & IoT', 'Signal Processing', 'MATLAB & Proteus Simulations', 'RF & Microwave Engineering', 'Communication Systems'],
       skillLevels: [88, 82, 85, 75, 78, 65, 70],
       bgColor: 'bg-blue-600/5',
@@ -151,6 +154,7 @@ export const BranchesSection = memo(function BranchesSection() {
       color: 'from-blue-600 to-cyan-500',
       accentColor: 'blue',
       emoji: '⚡',
+      imageUrl: '/branch-eee.png',
       skills: ['Power Systems & Generation', 'Electrical Machines & Drives', 'Control Systems & Automation', 'EV Technology & Smart Grids', 'MATLAB / PSCAD / ETAP', 'Renewable Energy Systems', 'Industrial Automation & PLC'],
       skillLevels: [85, 80, 82, 88, 75, 78, 70],
       bgColor: 'bg-blue-600/5',
@@ -191,6 +195,7 @@ export const BranchesSection = memo(function BranchesSection() {
       color: 'from-blue-600 to-cyan-500',
       accentColor: 'blue',
       emoji: '⚙️',
+      imageUrl: '/branch-mech.png',
       skills: ['CAD / CAM & Design', 'SolidWorks & CATIA', 'ANSYS & FEA Analysis', 'Manufacturing & Automation', 'Robotics & Mechatronics', 'Thermodynamics & Fluid Mechanics', 'Industry 4.0 & Digital Manufacturing'],
       skillLevels: [88, 85, 80, 75, 70, 82, 65],
       bgColor: 'bg-blue-600/5',
@@ -231,6 +236,7 @@ export const BranchesSection = memo(function BranchesSection() {
       color: 'from-blue-600 to-cyan-500',
       accentColor: 'blue',
       emoji: '🏗️',
+      imageUrl: '/branch-civil.png',
       skills: ['AutoCAD & Structural Design', 'STAAD Pro & ETABS', 'Quantity Surveying & Estimation', 'Construction Management', 'Smart Cities & Sustainability', 'BIM & Revit Modeling', 'Geotechnical Engineering'],
       skillLevels: [90, 85, 78, 80, 72, 75, 68],
       bgColor: 'bg-blue-600/5',
@@ -348,8 +354,8 @@ export const BranchesSection = memo(function BranchesSection() {
             >
               <div className={`absolute inset-0 bg-gradient-to-br ${stat.color} opacity-0 group-hover:opacity-10 transition-opacity`} />
               <stat.icon className="w-6 h-6 text-blue-400 mx-auto mb-2 relative z-10" />
-              <div className="text-xl text-heading mb-0.5 relative z-10 bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">{stat.value}</div>
-              <div className="text-xs text-text-muted relative z-10 leading-tight">{stat.label}</div>
+              <div className="text-2xl text-heading mb-0.5 relative z-10 bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent font-bold">{stat.value}</div>
+              <div className="text-sm text-text-muted relative z-10 leading-tight">{stat.label}</div>
             </motion.div>
           ))}
         </motion.div>
@@ -434,7 +440,7 @@ export const BranchesSection = memo(function BranchesSection() {
             {filteredBranches.length === 0 ? (
               <div className="col-span-3 text-center py-20 text-text-muted">
                 <Search className="w-12 h-12 mx-auto mb-4 opacity-30" />
-                <p>No branches match your search. Try a different keyword.</p>
+                <p className="text-xl">No branches match your search. Try a different keyword.</p>
               </div>
             ) : filteredBranches.map((branch, index) => {
               const globalIndex = branches.indexOf(branch);
@@ -469,39 +475,48 @@ export const BranchesSection = memo(function BranchesSection() {
 
                   {/* Hot badge */}
                   <div className="absolute top-3 left-3 z-20">
-                    <span className="text-xs px-2 py-1 bg-surface/40 backdrop-blur-sm text-heading rounded-full border border-surface-border">
+                    <span className="text-sm px-3 py-1 bg-surface/40 backdrop-blur-sm text-heading rounded-full border border-surface-border">
                       {branch.hotSkillBadge}
                     </span>
                   </div>
 
-                  {/* ── Card Header ── */}
-                  <div className={`pt-10 pb-5 px-5 bg-gradient-to-br ${branch.color} relative`}>
-                    <div className="absolute inset-0 bg-surface/25" />
-                    <div className="relative z-10">
-                      <div className="flex items-center gap-3 mb-3">
-                        <div className="p-2.5 bg-white/15 backdrop-blur-sm rounded-xl">
-                          <branch.icon className="w-7 h-7 text-white" />
-                        </div>
-                        <div>
-                          <h3 className="text-lg text-heading leading-tight">{branch.title}</h3>
-                          <p className="text-xs text-white/70 mt-0.5">{branch.description}</p>
-                        </div>
-                      </div>
+                  {/* ── Card Header (Image Only) ── */}
+                  <div className="relative h-56 overflow-hidden">
+                    <img 
+                      src={branch.imageUrl || "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?q=80&w=600&auto=format&fit=crop"} 
+                      alt={branch.title} 
+                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-page-bg via-transparent to-transparent" />
+                  </div>
 
-                      {/* Quick stats row */}
-                      <div className="grid grid-cols-4 gap-1.5 mt-3">
-                        {[
-                          { label: 'Students', value: branch.students },
-                          { label: 'Courses', value: `${branch.courses}+` },
-                          { label: 'Placed', value: `${branch.placementRate}%` },
-                          { label: 'Jobs', value: branch.jobCount },
-                        ].map((s, si) => (
-                          <div key={si} className="bg-white/10 backdrop-blur-sm rounded-lg p-1.5 text-center">
-                            <div className="text-white text-xs">{s.value}</div>
-                            <div className="text-white/55 text-[10px]">{s.label}</div>
-                          </div>
-                        ))}
+                  {/* ── Card Content (Title & Stats) ── */}
+                  <div className="px-5 pb-5 -mt-12 relative z-10">
+                    <div className="flex items-center gap-3 mb-4">
+                      <div className={`p-3 rounded-2xl bg-gradient-to-br ${branch.color} shadow-lg shadow-blue-500/20`}>
+                        <branch.icon className="w-8 h-8 text-white" />
                       </div>
+                      <div className="bg-page-bg/80 backdrop-blur-md px-4 py-2 rounded-xl border border-card-border shadow-xl flex-1">
+                        <h3 className="text-xl font-bold text-heading leading-tight">{branch.title}</h3>
+                        <p className="text-sm text-text-muted mt-0.5">{branch.shortName}</p>
+                      </div>
+                    </div>
+
+                    <p className="text-sm text-text-secondary mb-4 line-clamp-2">{branch.description}</p>
+
+                    {/* Quick stats row */}
+                    <div className="grid grid-cols-4 gap-2">
+                      {[
+                        { label: 'Students', value: branch.students },
+                        { label: 'Courses', value: `${branch.courses}+` },
+                        { label: 'Placed', value: `${branch.placementRate}%` },
+                        { label: 'Jobs', value: branch.jobCount },
+                      ].map((s, si) => (
+                        <div key={si} className="bg-card-bg/50 backdrop-blur-sm border border-card-border rounded-xl p-2.5 text-center hover:border-blue-500/30 transition-all">
+                          <div className="text-blue-400 text-sm font-bold">{s.value}</div>
+                          <div className="text-text-muted text-[10px] uppercase font-bold tracking-tighter mt-0.5">{s.label}</div>
+                        </div>
+                      ))}
                     </div>
                   </div>
 
@@ -511,13 +526,13 @@ export const BranchesSection = memo(function BranchesSection() {
                       <button
                         key={tab.id}
                         onClick={() => setTab(globalIndex, tab.id)}
-                        className={`flex-1 py-2 text-xs flex items-center justify-center gap-1 transition-all ${
+                        className={`flex-1 py-3 text-sm flex items-center justify-center gap-1 transition-all ${
                           activeTab === tab.id
                             ? 'text-blue-400 border-b-2 border-blue-500 bg-blue-500/5'
                             : 'text-text-muted hover:text-heading hover:bg-surface/30'
                         }`}
                       >
-                        <tab.icon className="w-3 h-3" />
+                        <tab.icon className="w-4 h-4" />
                         {tab.label}
                       </button>
                     ))}
@@ -531,36 +546,36 @@ export const BranchesSection = memo(function BranchesSection() {
                       <div className="space-y-4">
                         {/* Metrics row */}
                         <div className="grid grid-cols-3 gap-2">
-                          <div className="bg-card-bg rounded-lg p-2.5 text-center border border-card-border">
+                          <div className="bg-card-bg rounded-lg p-3 text-center border border-card-border">
                             <div className="flex items-center justify-center gap-1 mb-0.5">
-                              <TrendingUp className="w-3 h-3 text-green-400" />
-                              <span className="text-xs text-green-400">{branch.demandTrend}</span>
+                              <TrendingUp className="w-4 h-4 text-green-400" />
+                              <span className="text-sm text-green-400">{branch.demandTrend}</span>
                             </div>
-                            <div className="text-[10px] text-text-muted">YoY Demand</div>
+                            <div className="text-xs text-text-muted">YoY Demand</div>
                           </div>
-                          <div className="bg-card-bg rounded-lg p-2.5 text-center border border-card-border">
+                          <div className="bg-card-bg rounded-lg p-3 text-center border border-card-border">
                             <div className="flex items-center justify-center gap-1 mb-0.5">
-                              <DollarSign className="w-3 h-3 text-cyan-400" />
-                              <span className="text-xs text-cyan-400">{branch.avgPackage}</span>
+                              <DollarSign className="w-4 h-4 text-cyan-400" />
+                              <span className="text-sm text-cyan-400">{branch.avgPackage}</span>
                             </div>
-                            <div className="text-[10px] text-text-muted">Avg CTC</div>
+                            <div className="text-xs text-text-muted">Avg CTC</div>
                           </div>
-                          <div className="bg-card-bg rounded-lg p-2.5 text-center border border-card-border">
+                          <div className="bg-card-bg rounded-lg p-3 text-center border border-card-border">
                             <div className="flex items-center justify-center gap-1 mb-0.5">
-                              <Clock className="w-3 h-3 text-amber-400" />
-                              <span className="text-xs text-amber-400">{branch.learningDuration.split('–')[0]}</span>
+                              <Clock className="w-4 h-4 text-amber-400" />
+                              <span className="text-sm text-amber-400">{branch.learningDuration.split('–')[0]}</span>
                             </div>
-                            <div className="text-[10px] text-text-muted">Min Months</div>
+                            <div className="text-xs text-text-muted">Min Months</div>
                           </div>
                         </div>
 
                         {/* Placement bar */}
                         <div>
-                          <div className="flex justify-between text-xs mb-1.5">
+                          <div className="flex justify-between text-sm mb-1.5">
                             <span className="text-text-muted">Placement Rate</span>
-                            <span className="text-blue-400">{branch.placementRate}%</span>
+                            <span className="text-blue-400 font-semibold">{branch.placementRate}%</span>
                           </div>
-                          <div className="h-1.5 bg-surface rounded-full overflow-hidden">
+                          <div className="h-2 bg-surface rounded-full overflow-hidden">
                             <motion.div
                               initial={{ width: 0 }}
                               whileInView={{ width: `${branch.placementRate}%` }}
@@ -572,50 +587,50 @@ export const BranchesSection = memo(function BranchesSection() {
                         </div>
 
                         {/* Salary growth */}
-                        <div className="bg-card-bg rounded-lg p-3 border border-card-border">
-                          <div className="text-[10px] text-text-muted mb-2 flex items-center gap-1">
-                            <LineChart className="w-3 h-3" /> Salary Growth Path
+                        <div className="bg-card-bg rounded-lg p-4 border border-card-border">
+                          <div className="text-sm text-text-muted mb-3 flex items-center gap-2">
+                            <LineChart className="w-4 h-4" /> Salary Growth Path
                           </div>
                           {branch.salaryGrowth.map((g, i) => (
-                            <div key={i} className="flex justify-between text-xs mb-1 last:mb-0">
+                            <div key={i} className="flex justify-between text-sm mb-1.5 last:mb-0">
                               <span className="text-text-muted">{g.split(':')[0]}</span>
-                              <span className="text-green-400">{g.split(':')[1]}</span>
+                              <span className="text-green-400 font-medium">{g.split(':')[1]}</span>
                             </div>
                           ))}
                         </div>
 
                         {/* Alumni highlight */}
-                        <div className={`bg-gradient-to-r ${branch.color} bg-opacity-10 rounded-lg p-3 border border-blue-500/20`}>
-                          <div className="text-[10px] text-text-muted mb-1 flex items-center gap-1">
-                            <Trophy className="w-3 h-3 text-amber-400" /> Alumni Success
+                        <div className={`bg-gradient-to-r ${branch.color} bg-opacity-10 rounded-lg p-4 border border-blue-500/20`}>
+                          <div className="text-sm text-text-muted mb-1.5 flex items-center gap-2">
+                            <Trophy className="w-4 h-4 text-amber-400" /> Alumni Success
                           </div>
-                          <div className="text-sm text-white">{branch.alumniHighlight.name}</div>
-                          <div className="text-xs text-text-secondary">{branch.alumniHighlight.role}</div>
-                          <div className="text-xs text-green-400 mt-0.5">Earning {branch.alumniHighlight.ctc}</div>
+                          <div className="text-base text-white font-medium">{branch.alumniHighlight.name}</div>
+                          <div className="text-sm text-text-secondary">{branch.alumniHighlight.role}</div>
+                          <div className="text-sm text-green-400 mt-1">Earning {branch.alumniHighlight.ctc}</div>
                         </div>
 
                         {/* Market outlook */}
-                        <div className="bg-gradient-to-r from-blue-600/10 to-cyan-500/10 border border-blue-500/20 rounded-lg p-2.5">
-                          <div className="text-[10px] text-text-muted mb-1 flex items-center gap-1">
-                            <BarChart className="w-3 h-3" /> Market Outlook
+                        <div className="bg-gradient-to-r from-blue-600/10 to-cyan-500/10 border border-blue-500/20 rounded-lg p-3">
+                          <div className="text-sm text-text-muted mb-1 flex items-center gap-2">
+                            <BarChart className="w-4 h-4" /> Market Outlook
                           </div>
-                          <p className="text-xs text-blue-300">{branch.marketOutlook}</p>
+                          <p className="text-sm text-blue-300">{branch.marketOutlook}</p>
                         </div>
                       </div>
                     )}
 
                     {/* SKILLS TAB */}
                     {activeTab === 'skills' && (
-                      <div className="space-y-3">
+                      <div className="space-y-4">
                         {/* Skill proficiency bars */}
-                        <div className="space-y-2">
+                        <div className="space-y-3">
                           {branch.skills.map((skill, si) => (
                             <div key={si}>
-                              <div className="flex justify-between text-[11px] mb-1">
+                              <div className="flex justify-between text-sm mb-1.5">
                                 <span className="text-text-secondary">{skill}</span>
                                 <span className="text-text-muted">{branch.skillLevels[si]}%</span>
                               </div>
-                              <div className="h-1.5 bg-surface rounded-full overflow-hidden">
+                              <div className="h-2 bg-surface rounded-full overflow-hidden">
                                 <motion.div
                                   initial={{ width: 0 }}
                                   whileInView={{ width: `${branch.skillLevels[si]}%` }}
@@ -630,12 +645,12 @@ export const BranchesSection = memo(function BranchesSection() {
 
                         {/* Trending skills */}
                         <div>
-                          <div className="text-[10px] text-text-muted mb-2 flex items-center gap-1">
-                            <Flame className="w-3 h-3 text-orange-400" /> Trending Skills
+                          <div className="text-sm text-text-muted mb-2 flex items-center gap-2">
+                            <Flame className="w-4 h-4 text-orange-400" /> Trending Skills
                           </div>
-                          <div className="flex flex-wrap gap-1.5">
+                          <div className="flex flex-wrap gap-2">
                             {branch.topSkillsInDemand.map((s, i) => (
-                              <span key={i} className="text-[11px] px-2 py-0.5 bg-gradient-to-r from-blue-500/20 to-cyan-500/20 text-blue-300 rounded-full border border-blue-500/30">
+                              <span key={i} className="text-sm px-3 py-1 bg-gradient-to-r from-blue-500/20 to-cyan-500/20 text-blue-300 rounded-full border border-blue-500/30">
                                 {s}
                               </span>
                             ))}
@@ -644,13 +659,13 @@ export const BranchesSection = memo(function BranchesSection() {
 
                         {/* Interview topics */}
                         <div>
-                          <div className="text-[10px] text-text-muted mb-2 flex items-center gap-1">
-                            <Target className="w-3 h-3" /> Interview Topics
+                          <div className="text-sm text-text-muted mb-2 flex items-center gap-2">
+                            <Target className="w-4 h-4" /> Interview Topics
                           </div>
-                          <div className="space-y-1">
+                          <div className="space-y-2">
                             {branch.interviewTopics.map((t, i) => (
-                              <div key={i} className="flex items-center gap-2 text-[11px] text-text-muted">
-                                <CheckCircle className="w-3 h-3 text-blue-400 shrink-0" />
+                              <div key={i} className="flex items-center gap-3 text-sm text-text-muted">
+                                <CheckCircle className="w-4 h-4 text-blue-400 shrink-0" />
                                 {t}
                               </div>
                             ))}
@@ -661,15 +676,15 @@ export const BranchesSection = memo(function BranchesSection() {
 
                     {/* CAREER TAB */}
                     {activeTab === 'career' && (
-                      <div className="space-y-3">
+                      <div className="space-y-4">
                         {/* Top roles */}
                         <div>
-                          <div className="text-[10px] text-text-muted mb-2 flex items-center gap-1">
-                            <Briefcase className="w-3 h-3" /> Top Job Roles
+                          <div className="text-sm text-text-muted mb-2 flex items-center gap-2">
+                            <Briefcase className="w-4 h-4" /> Top Job Roles
                           </div>
-                          <div className="flex flex-wrap gap-1.5">
+                          <div className="flex flex-wrap gap-2">
                             {branch.careerPaths.map((r, i) => (
-                              <span key={i} className={`text-[11px] px-2.5 py-1 rounded-lg bg-gradient-to-r ${branch.color} bg-opacity-10 text-blue-300 border border-blue-500/20`}>
+                              <span key={i} className={`text-sm px-3 py-1.5 rounded-lg bg-gradient-to-r ${branch.color} bg-opacity-10 text-blue-300 border border-blue-500/20`}>
                                 {r}
                               </span>
                             ))}
@@ -678,12 +693,12 @@ export const BranchesSection = memo(function BranchesSection() {
 
                         {/* Top companies */}
                         <div>
-                          <div className="text-[10px] text-text-muted mb-2 flex items-center gap-1">
-                            <Building2 className="w-3 h-3" /> Top Recruiters
+                          <div className="text-sm text-text-muted mb-2 flex items-center gap-2">
+                            <Building2 className="w-4 h-4" /> Top Recruiters
                           </div>
-                          <div className="flex flex-wrap gap-1.5">
+                          <div className="flex flex-wrap gap-2">
                             {branch.topCompanies.map((c, i) => (
-                              <span key={i} className="text-[11px] px-2 py-1 bg-surface text-text-secondary rounded border border-surface-border">
+                              <span key={i} className="text-sm px-3 py-1.5 bg-surface text-text-secondary rounded border border-surface-border">
                                 {c}
                               </span>
                             ))}
@@ -692,12 +707,12 @@ export const BranchesSection = memo(function BranchesSection() {
 
                         {/* Hackathon areas */}
                         <div>
-                          <div className="text-[10px] text-text-muted mb-2 flex items-center gap-1">
-                            <Rocket className="w-3 h-3" /> Hackathon Domains
+                          <div className="text-sm text-text-muted mb-2 flex items-center gap-2">
+                            <Rocket className="w-4 h-4" /> Hackathon Domains
                           </div>
-                          <div className="flex flex-wrap gap-1.5">
+                          <div className="flex flex-wrap gap-2">
                             {branch.hackathonAreas.map((h, i) => (
-                              <span key={i} className="text-[11px] px-2 py-0.5 bg-surface text-text-muted rounded-full border border-surface-border">
+                              <span key={i} className="text-sm px-3 py-1 bg-surface text-text-muted rounded-full border border-surface-border">
                                 {h}
                               </span>
                             ))}
@@ -706,13 +721,13 @@ export const BranchesSection = memo(function BranchesSection() {
 
                         {/* Research domains */}
                         <div>
-                          <div className="text-[10px] text-text-muted mb-2 flex items-center gap-1">
-                            <Microscope className="w-3 h-3" /> Research Areas
+                          <div className="text-sm text-text-muted mb-2 flex items-center gap-2">
+                            <Microscope className="w-4 h-4" /> Research Areas
                           </div>
-                          <div className="space-y-1">
+                          <div className="space-y-2">
                             {branch.researchDomains.map((rd, i) => (
-                              <div key={i} className="flex items-center gap-2 text-[11px] text-text-muted">
-                                <ArrowRight className="w-3 h-3 text-cyan-500 shrink-0" />
+                              <div key={i} className="flex items-center gap-3 text-sm text-text-muted">
+                                <ArrowRight className="w-4 h-4 text-cyan-500 shrink-0" />
                                 {rd}
                               </div>
                             ))}
@@ -720,14 +735,14 @@ export const BranchesSection = memo(function BranchesSection() {
                         </div>
 
                         {/* Internship rate */}
-                        <div className="bg-card-bg rounded-lg p-3 border border-card-border flex items-center justify-between">
+                        <div className="bg-card-bg rounded-lg p-4 border border-card-border flex items-center justify-between">
                           <div>
-                            <div className="text-[10px] text-text-muted">Internship Conversion</div>
-                            <div className="text-sm text-cyan-400">{branch.internshipRate}</div>
+                            <div className="text-sm text-text-muted">Internship Conversion</div>
+                            <div className="text-base text-cyan-400 font-semibold">{branch.internshipRate}</div>
                           </div>
                           <div>
-                            <div className="text-[10px] text-text-muted">Open Job Roles</div>
-                            <div className="text-sm text-blue-400">{branch.jobCount}</div>
+                            <div className="text-sm text-text-muted">Open Job Roles</div>
+                            <div className="text-base text-blue-400 font-semibold">{branch.jobCount}</div>
                           </div>
                         </div>
                       </div>
@@ -735,17 +750,17 @@ export const BranchesSection = memo(function BranchesSection() {
 
                     {/* TOOLS TAB */}
                     {activeTab === 'tools' && (
-                      <div className="space-y-3">
+                      <div className="space-y-4">
                         {/* Industry tools */}
                         <div>
-                          <div className="text-[10px] text-text-muted mb-2 flex items-center gap-1">
-                            <Wrench className="w-3 h-3" /> Industry Tools You'll Learn
+                          <div className="text-sm text-text-muted mb-2 flex items-center gap-2">
+                            <Wrench className="w-4 h-4" /> Industry Tools You'll Learn
                           </div>
                           <div className="grid grid-cols-2 gap-2">
                             {branch.industryTools.map((tool, i) => (
-                              <div key={i} className="flex items-center gap-2 bg-surface rounded-lg p-2 border border-surface-border">
+                              <div key={i} className="flex items-center gap-2 bg-surface rounded-lg p-2.5 border border-surface-border">
                                 <div className={`w-2 h-2 rounded-full bg-gradient-to-r ${branch.color} shrink-0`} />
-                                <span className="text-[11px] text-text-secondary">{tool}</span>
+                                <span className="text-sm text-text-secondary">{tool}</span>
                               </div>
                             ))}
                           </div>
@@ -753,14 +768,14 @@ export const BranchesSection = memo(function BranchesSection() {
 
                         {/* Certifications */}
                         <div>
-                          <div className="text-[10px] text-text-muted mb-2 flex items-center gap-1">
-                            <Award className="w-3 h-3" /> Certifications You Can Earn
+                          <div className="text-sm text-text-muted mb-2 flex items-center gap-2">
+                            <Award className="w-4 h-4" /> Certifications You Can Earn
                           </div>
-                          <div className="space-y-1.5">
+                          <div className="space-y-2">
                             {branch.certifications.map((cert, i) => (
-                              <div key={i} className="flex items-center gap-2 bg-gradient-to-r from-blue-600/10 to-cyan-500/10 border border-blue-500/20 rounded-lg px-3 py-1.5">
-                                <BadgeCheck className="w-3.5 h-3.5 text-blue-400 shrink-0" />
-                                <span className="text-[11px] text-text-secondary">{cert}</span>
+                              <div key={i} className="flex items-center gap-3 bg-gradient-to-r from-blue-600/10 to-cyan-500/10 border border-blue-500/20 rounded-lg px-4 py-2.5">
+                                <BadgeCheck className="w-5 h-5 text-blue-400 shrink-0" />
+                                <span className="text-sm text-text-secondary">{cert}</span>
                               </div>
                             ))}
                           </div>
@@ -768,12 +783,12 @@ export const BranchesSection = memo(function BranchesSection() {
 
                         {/* Sample projects */}
                         <div>
-                          <div className="text-[10px] text-text-muted mb-2 flex items-center gap-1">
-                            <Package className="w-3 h-3" /> Sample Projects
+                          <div className="text-sm text-text-muted mb-2 flex items-center gap-2">
+                            <Package className="w-4 h-4" /> Sample Projects
                           </div>
-                          <div className="grid grid-cols-2 gap-1.5">
+                          <div className="grid grid-cols-2 gap-2">
                             {branch.projectExamples.map((proj, i) => (
-                              <div key={i} className="bg-surface rounded-lg p-2 border border-surface-border text-[11px] text-text-muted">
+                              <div key={i} className="bg-surface rounded-lg p-3 border border-surface-border text-sm text-text-muted">
                                 {proj}
                               </div>
                             ))}
@@ -787,15 +802,15 @@ export const BranchesSection = memo(function BranchesSection() {
                   <div className="px-5 pb-5">
                     <button
                       onClick={() => setExpandedBranch(globalIndex)}
-                      className={`w-full py-2.5 rounded-lg bg-gradient-to-r ${branch.color} text-white text-sm hover:shadow-xl transition-all flex items-center justify-center gap-2 group`}
+                      className={`w-full py-3 rounded-lg bg-gradient-to-r ${branch.color} text-white text-sm font-semibold hover:shadow-xl transition-all flex items-center justify-center gap-2 group`}
                     >
                       <span>Full Branch Details</span>
-                      <ArrowUpRight className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+                      <ArrowUpRight className="w-5 h-5 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
                     </button>
                   </div>
 
                   {/* Bottom glow bar */}
-                  <div className={`h-0.5 w-full bg-gradient-to-r ${branch.color} opacity-0 group-hover:opacity-100 transition-opacity`} />
+                  <div className={`h-1 w-full bg-gradient-to-r ${branch.color} opacity-0 group-hover:opacity-100 transition-opacity`} />
                 </motion.div>
               );
             })}
@@ -809,39 +824,39 @@ export const BranchesSection = memo(function BranchesSection() {
             animate={{ opacity: 1, y: 0 }}
             className="mb-14 bg-card-bg backdrop-blur-sm border border-blue-500/30 rounded-2xl overflow-hidden"
           >
-            <div className="p-6 border-b border-card-border">
-              <h3 className="text-xl text-heading flex items-center gap-2">
-                <SlidersHorizontal className="w-5 h-5 text-blue-400" />
+            <div className="p-8 border-b border-card-border">
+              <h3 className="text-2xl text-heading flex items-center gap-3">
+                <SlidersHorizontal className="w-6 h-6 text-blue-400" />
                 Branch Comparison
               </h3>
             </div>
             <div className="grid grid-cols-3 divide-x divide-slate-800">
               {/* Labels column */}
-              <div className="p-6 space-y-5">
+              <div className="p-8 space-y-6">
                 {['Placement Rate', 'Avg Package', 'Demand Trend', 'Learning Duration', 'Difficulty', 'Job Market', 'Top Role'].map(label => (
-                  <div key={label} className="h-8 flex items-center text-sm text-text-muted">{label}</div>
+                  <div key={label} className="h-8 flex items-center text-base text-text-muted">{label}</div>
                 ))}
               </div>
               {compareList.map(idx => {
                 const b = branches[idx];
                 return (
-                  <div key={idx} className="p-6 space-y-5">
-                    <div className="flex items-center gap-2 mb-4 -mt-2">
-                      <div className={`p-1.5 rounded-lg bg-gradient-to-br ${b.color}`}>
-                        <b.icon className="w-4 h-4 text-white" />
+                  <div key={idx} className="p-8 space-y-6">
+                    <div className="flex items-center gap-3 mb-6 -mt-2">
+                      <div className={`p-2 rounded-lg bg-gradient-to-br ${b.color}`}>
+                        <b.icon className="w-5 h-5 text-white" />
                       </div>
-                      <span className="text-sm text-white">{b.shortName}</span>
+                      <span className="text-base font-semibold text-white">{b.shortName}</span>
                     </div>
                     {[
-                      <span className="text-blue-400">{b.placementRate}%</span>,
-                      <span className="text-green-400">{b.avgPackage}</span>,
-                      <span className="text-cyan-400">{b.demandTrend}</span>,
-                      <span className="text-amber-400">{b.learningDuration}</span>,
+                      <span className="text-blue-400 font-semibold">{b.placementRate}%</span>,
+                      <span className="text-green-400 font-semibold">{b.avgPackage}</span>,
+                      <span className="text-cyan-400 font-semibold">{b.demandTrend}</span>,
+                      <span className="text-amber-400 font-semibold">{b.learningDuration}</span>,
                       <span className="text-text-secondary">{b.difficultyLevel}</span>,
-                      <span className="text-text-secondary text-xs">{b.jobCount} roles</span>,
-                      <span className="text-text-secondary text-xs">{b.topRoles[0]}</span>,
+                      <span className="text-text-secondary">{b.jobCount} roles</span>,
+                      <span className="text-text-secondary">{b.topRoles[0]}</span>,
                     ].map((val, vi) => (
-                      <div key={vi} className="h-8 flex items-center text-sm">{val}</div>
+                      <div key={vi} className="h-8 flex items-center text-base">{val}</div>
                     ))}
                   </div>
                 );
@@ -850,12 +865,12 @@ export const BranchesSection = memo(function BranchesSection() {
           </motion.div>
         )}
 
-        {/* ── Why EduPulseX Feature Cards ── */}
+        {/* ── Why Tectonix Feature Cards ── */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="grid md:grid-cols-3 gap-6 mb-14"
+          className="grid md:grid-cols-3 gap-8 mb-14"
         >
           {[
             {
@@ -887,18 +902,18 @@ export const BranchesSection = memo(function BranchesSection() {
               transition={{ delay: i * 0.1 }}
               viewport={{ once: true }}
               whileHover={{ scale: 1.03, y: -4 }}
-              className="bg-gradient-to-br from-slate-900/60 to-slate-800/30 border border-card-border rounded-xl p-6 hover:border-blue-500/40 hover:shadow-xl hover:shadow-blue-500/15 transition-all relative overflow-hidden group"
+              className="bg-gradient-to-br from-slate-900/60 to-slate-800/30 border border-card-border rounded-xl p-8 hover:border-blue-500/40 hover:shadow-xl hover:shadow-blue-500/15 transition-all relative overflow-hidden group"
             >
               <div className={`absolute inset-0 bg-gradient-to-br ${feature.color} opacity-0 group-hover:opacity-5 transition-opacity`} />
-              <div className={`inline-flex p-3 rounded-lg bg-gradient-to-br ${feature.color} mb-4 shadow-lg relative z-10`}>
-                <feature.icon className="w-6 h-6 text-white" />
+              <div className={`inline-flex p-4 rounded-xl bg-gradient-to-br ${feature.color} mb-6 shadow-lg relative z-10`}>
+                <feature.icon className="w-8 h-8 text-white" />
               </div>
-              <h3 className="text-base text-heading mb-2 relative z-10">{feature.title}</h3>
-              <p className="text-sm text-text-muted mb-4 relative z-10">{feature.description}</p>
-              <ul className="space-y-1 relative z-10">
+              <h3 className="text-xl text-heading mb-3 relative z-10">{feature.title}</h3>
+              <p className="text-base text-text-muted leading-relaxed mb-6 line-clamp-2">{feature.description}</p>
+              <ul className="space-y-2 relative z-10">
                 {feature.points.map((pt, pi) => (
-                  <li key={pi} className="flex items-center gap-2 text-xs text-text-muted">
-                    <CheckCircle className="w-3.5 h-3.5 text-blue-400 shrink-0" />
+                  <li key={pi} className="flex items-center gap-3 text-sm text-text-muted">
+                    <CheckCircle className="w-4 h-4 text-blue-400 shrink-0" />
                     {pt}
                   </li>
                 ))}

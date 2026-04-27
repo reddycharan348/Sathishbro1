@@ -84,7 +84,7 @@ export const StatsSection = memo(function StatsSection() {
                 )}
               </div>
               
-              <div className="text-xs sm:text-sm text-text-muted relative">{stat.label}</div>
+              <div className="text-sm sm:text-base text-text-muted relative">{stat.label}</div>
               <div className="absolute top-0 right-0 w-20 h-20 bg-gradient-to-br from-blue-600/10 to-transparent rounded-bl-full" />
             </div>
           </motion.div>

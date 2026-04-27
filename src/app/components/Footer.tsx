@@ -1,4 +1,5 @@
-import { Zap, Mail, MapPin, Phone, Github, Linkedin, Twitter, Youtube } from 'lucide-react';
+import { Cpu, Mail, MapPin, Phone, Github, Linkedin, Twitter, Youtube } from 'lucide-react';
+import { Logo } from './Logo';
 import { memo } from 'react';
 
 export const Footer = memo(function Footer() {
@@ -8,35 +9,29 @@ export const Footer = memo(function Footer() {
       { name: 'Courses', page: 'courses' },
       { name: 'Virtual Labs', page: 'projects' },
       { name: 'AI Tools', page: 'ai' },
-      { name: 'Career Hub', page: 'career' },
     ],
     Resources: [
-      { name: 'Documentation', page: 'home' },
-      { name: 'Blog', page: 'home' },
-      { name: 'Tutorials', page: 'roadmap' },
       { name: 'Success Stories', page: 'home' },
-      { name: 'FAQs', page: 'home' },
+      { name: 'FAQs', page: 'faq-section' },
+      { name: 'Blog', page: 'blogs' },
+      { name: 'Documentation', page: 'home' },
     ],
     Company: [
       { name: 'About Us', page: 'home' },
-      { name: 'Contact', page: 'home' },
-      { name: 'Careers', page: 'career' },
-      { name: 'Partners', page: 'home' },
-      { name: 'Press Kit', page: 'home' },
+      { name: 'Contact', page: 'contact' },
+      { name: 'Trainers', page: 'trainer' },
     ],
     Legal: [
       { name: 'Privacy Policy', page: 'home' },
       { name: 'Terms of Service', page: 'home' },
-      { name: 'Cookie Policy', page: 'home' },
-      { name: 'Refund Policy', page: 'home' },
     ],
   };
 
   const socialLinks = [
-    { icon: Github, href: 'https://github.com/EduPulseX', label: 'GitHub' },
-    { icon: Linkedin, href: 'https://linkedin.com/company/edupulsex', label: 'LinkedIn' },
-    { icon: Twitter, href: 'https://twitter.com/edupulsex', label: 'Twitter' },
-    { icon: Youtube, href: 'https://youtube.com/@edupulsex', label: 'YouTube' },
+    { icon: Github, href: 'https://github.com/Tectonix', label: 'GitHub' },
+    { icon: Linkedin, href: 'https://linkedin.com/company/tectonix', label: 'LinkedIn' },
+    { icon: Twitter, href: 'https://twitter.com/tectonix', label: 'Twitter' },
+    { icon: Youtube, href: 'https://youtube.com/@tectonix', label: 'YouTube' },
   ];
 
   const handleNavigation = (page: string) => {
@@ -52,29 +47,24 @@ export const Footer = memo(function Footer() {
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8 mb-12">
           {/* Brand section */}
           <div className="sm:col-span-2 md:col-span-3 lg:col-span-2">
-            <div className="flex items-center gap-2 mb-4">
-              <div className="bg-gradient-to-br from-blue-600 to-cyan-400 p-2 rounded-lg shadow-lg shadow-blue-500/50">
-                <Zap className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
-              </div>
-              <span className="text-lg sm:text-xl bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent font-bold">EduPulseX</span>
-            </div>
-            <p className="text-sm mb-6 text-text-muted">
+            <Logo onClick={() => handleNavigation('home')} iconSize={144} className="mb-4" />
+            <p className="text-base mb-6 text-text-muted leading-relaxed">
               Your AI-Powered Learning Assistant. Empowering engineering students across
-              all branches with personalized learning and career guidance.
+              all branches with personalized learning and guidance.
             </p>
             
             {/* Contact info */}
             <div className="space-y-2 text-sm text-text-muted">
               <div className="flex items-center gap-2">
                 <Mail className="w-4 h-4 text-blue-400" />
-                <a href="mailto:support@edupulsex.com" className="hover:text-heading transition-colors">
-                  support@edupulsex.com
+                <a href="mailto:support@tectonix.com" className="hover:text-heading transition-colors">
+                  support@tectonix.com
                 </a>
               </div>
               <div className="flex items-center gap-2">
                 <Mail className="w-4 h-4 text-blue-400" />
-                <a href="mailto:info@edupulsex.com" className="hover:text-heading transition-colors">
-                  info@edupulsex.com
+                <a href="mailto:info@tectonix.com" className="hover:text-heading transition-colors">
+                  info@tectonix.com
                 </a>
               </div>
               <div className="flex items-center gap-2">
@@ -93,8 +83,8 @@ export const Footer = memo(function Footer() {
           {/* Links sections */}
           {Object.entries(footerLinks).map(([category, links]) => (
             <div key={category}>
-              <h3 className="text-heading font-semibold mb-4">{category}</h3>
-              <ul className="space-y-2 text-sm text-text-muted">
+              <h3 className="text-heading font-semibold mb-4 text-lg">{category}</h3>
+              <ul className="space-y-3 text-base text-text-muted">
                 {links.map((link) => (
                   <li key={link.name}>
                     <a href="#" onClick={(e) => { e.preventDefault(); handleNavigation(link.page); }} className="hover:text-blue-500 transition-colors">
@@ -130,7 +120,7 @@ export const Footer = memo(function Footer() {
         {/* Bottom section */}
         <div className="border-t border-surface-border pt-8 flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="text-sm text-text-muted text-center md:text-left">
-            © 2025 EduPulseX. All rights reserved.
+            © 2025 Tectonix. All rights reserved.
           </p>
 
           {/* Social links */}

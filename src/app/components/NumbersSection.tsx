@@ -107,7 +107,7 @@ export const NumbersSection = memo(function NumbersSection() {
             Impact That Speaks For Itself
           </h2>
           <p className="text-base sm:text-lg text-text-muted max-w-2xl mx-auto px-2">
-            Join thousands of students who are already transforming their careers with EduPulseX.
+            Join thousands of students who are already transforming their careers with Tectonix.
           </p>
         </motion.div>
 

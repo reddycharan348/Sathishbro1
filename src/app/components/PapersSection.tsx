@@ -177,7 +177,7 @@ function PaperCard({ paper, idx }: { paper: typeof PAPERS[0]; idx: number }) {
           {/* ── title ── */}
           <a href={paper.link} target="_blank" rel="noopener noreferrer"
             className="block group/title mb-3">
-            <h3 className="text-base text-heading leading-snug group-hover/title:text-blue-300 transition-colors">
+            <h3 className="text-lg font-bold text-heading leading-snug group-hover/title:text-blue-300 transition-colors">
               {paper.title}
               <ArrowUpRight className="inline ml-1.5 w-3.5 h-3.5 opacity-0 group-hover/title:opacity-100 transition-opacity text-blue-400" />
             </h3>
@@ -282,7 +282,7 @@ function FeaturedPaperCard({ paper }: { paper: typeof PAPERS[0] }) {
         </div>
 
         <a href={paper.link} target="_blank" rel="noopener noreferrer" className="block group/title mb-3">
-          <h3 className="text-2xl text-heading leading-snug hover:text-blue-300 transition-colors">
+          <h3 className="text-3xl font-bold text-heading leading-snug hover:text-blue-300 transition-colors">
             {paper.title}
             <ArrowUpRight className="inline ml-2 w-5 h-5 opacity-0 group-hover/title:opacity-100 transition-opacity text-blue-400" />
           </h3>
@@ -384,9 +384,9 @@ export function PapersSection() {
               transition={{ delay: i * 0.08 }} viewport={{ once: true }} whileHover={{ y: -4 }}
               className="bg-card-bg border border-card-border rounded-2xl p-5 text-center hover:border-blue-500/40 hover:shadow-lg hover:shadow-blue-500/10 transition-all">
               <s.icon className="w-5 h-5 text-blue-400 mx-auto mb-2" />
-              <div className="text-2xl text-heading bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent mb-1">{s.value}</div>
-              <div className="text-sm text-text-secondary mb-0.5">{s.label}</div>
-              <div className="text-xs text-slate-600">{s.sub}</div>
+              <div className="text-3xl font-bold text-heading bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent mb-1">{s.value}</div>
+              <div className="text-base font-medium text-text-secondary mb-1">{s.label}</div>
+              <div className="text-sm text-slate-600">{s.sub}</div>
             </motion.div>
           ))}
         </motion.div>
@@ -571,12 +571,12 @@ export function PapersSection() {
             <div>
               <div className="flex items-center gap-2 mb-3">
                 <Award className="w-6 h-6 text-cyan-400" />
-                <h3 className="text-2xl text-heading">Submit Your Research</h3>
-              </div>
-              <p className="text-text-muted max-w-lg text-sm leading-relaxed">
-                Published a paper? Get it featured in the EduPulseX research library and
-                reach thousands of engineering students across India.
-              </p>
+              <h3 className="text-3xl font-bold text-heading">Submit Your Research</h3>
+            </div>
+            <p className="text-text-muted max-w-xl text-base leading-relaxed">
+              Published a paper? Get it featured in the Tectonix research library and
+              reach thousands of engineering students across India.
+            </p>
               <div className="flex flex-wrap gap-4 mt-4">
                 {['All Branches Welcome', 'Peer-Reviewed', 'Open Access Priority'].map((tag, i) => (
                   <span key={i} className="flex items-center gap-1.5 text-xs text-text-muted">
@@ -586,7 +586,7 @@ export function PapersSection() {
               </div>
             </div>
             <div className="flex flex-col gap-3 shrink-0">
-              <motion.a href="mailto:research@edupulsex.com"
+              <motion.a href="mailto:research@tectonix.com"
                 whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}
                 className="px-8 py-4 bg-gradient-to-r from-blue-600 to-cyan-500 text-white rounded-xl text-sm hover:shadow-2xl hover:shadow-blue-500/30 transition-all flex items-center gap-2 justify-center">
                 <FileText className="w-5 h-5" /> Submit a Paper

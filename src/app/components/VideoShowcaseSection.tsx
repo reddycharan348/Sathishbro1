@@ -62,7 +62,7 @@ export function VideoShowcaseSection() {
             Watch & Learn
           </div>
           <h2 className="text-4xl sm:text-5xl text-heading mb-4 bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">
-            See EduPulseX in Action
+            See Tectonix in Action
           </h2>
           <p className="text-lg text-text-muted max-w-2xl mx-auto">
             Discover how our platform transforms students into industry-ready professionals.

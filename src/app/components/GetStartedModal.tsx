@@ -74,13 +74,13 @@ export function GetStartedModal({ isOpen, onClose }: GetStartedModalProps) {
 
       // Store data locally as backup
       try {
-        const submissions = JSON.parse(localStorage.getItem('edupulsex_getstarted') || '[]');
+        const submissions = JSON.parse(localStorage.getItem('tectonix_getstarted') || '[]');
         submissions.push({
           ...submissionData,
           id: `local_${Date.now()}`,
           submittedAt: new Date().toISOString()
         });
-        localStorage.setItem('edupulsex_getstarted', JSON.stringify(submissions));
+        localStorage.setItem('tectonix_getstarted', JSON.stringify(submissions));
         console.log('Get Started form also saved locally as backup');
       } catch (localError) {
         console.warn('Could not save to localStorage:', localError);
@@ -100,14 +100,14 @@ export function GetStartedModal({ isOpen, onClose }: GetStartedModalProps) {
             ...formData,
             timestamp: new Date().toISOString(),
           };
-          const submissions = JSON.parse(localStorage.getItem('edupulsex_getstarted') || '[]');
+          const submissions = JSON.parse(localStorage.getItem('tectonix_getstarted') || '[]');
           submissions.push({
             ...submissionData,
             id: `local_${Date.now()}`,
             submittedAt: new Date().toISOString(),
             status: 'pending_sync'
           });
-          localStorage.setItem('edupulsex_getstarted', JSON.stringify(submissions));
+          localStorage.setItem('tectonix_getstarted', JSON.stringify(submissions));
           
           // Show success even if backend is down
           setIsSuccess(true);
@@ -145,7 +145,7 @@ export function GetStartedModal({ isOpen, onClose }: GetStartedModalProps) {
         <DialogHeader>
           <DialogTitle className="text-xl sm:text-2xl bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent flex items-center gap-2">
             <Rocket className="w-5 h-5 sm:w-6 sm:h-6 text-blue-400" />
-            Get Started with EduPulseX
+            Get Started with Tectonix
           </DialogTitle>
           <DialogDescription className="text-text-muted text-sm sm:text-base">
             Join 10,000+ students already learning on our platform. Start your journey today!

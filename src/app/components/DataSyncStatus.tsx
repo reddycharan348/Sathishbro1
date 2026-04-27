@@ -45,8 +45,8 @@ export function DataSyncStatus() {
 
   const checkPendingData = () => {
     try {
-      const enrollments = JSON.parse(localStorage.getItem('edupulsex_enrollments') || '[]');
-      const getStarted = JSON.parse(localStorage.getItem('edupulsex_getstarted') || '[]');
+      const enrollments = JSON.parse(localStorage.getItem('tectonix_enrollments') || '[]');
+      const getStarted = JSON.parse(localStorage.getItem('tectonix_getstarted') || '[]');
       
       const pendingEnrollments = enrollments.filter((e: any) => e.status === 'pending_sync').length;
       const pendingGetStarted = getStarted.filter((g: any) => g.status === 'pending_sync').length;
@@ -72,7 +72,7 @@ export function DataSyncStatus() {
 
     try {
       // Sync enrollments
-      const enrollments = JSON.parse(localStorage.getItem('edupulsex_enrollments') || '[]');
+      const enrollments = JSON.parse(localStorage.getItem('tectonix_enrollments') || '[]');
       const pendingEnrollments = enrollments.filter((e: any) => e.status === 'pending_sync');
       
       for (const enrollment of pendingEnrollments) {
@@ -98,10 +98,10 @@ export function DataSyncStatus() {
         }
       }
 
-      localStorage.setItem('edupulsex_enrollments', JSON.stringify(enrollments));
+      localStorage.setItem('tectonix_enrollments', JSON.stringify(enrollments));
 
       // Sync get started submissions
-      const getStarted = JSON.parse(localStorage.getItem('edupulsex_getstarted') || '[]');
+      const getStarted = JSON.parse(localStorage.getItem('tectonix_getstarted') || '[]');
       const pendingGetStarted = getStarted.filter((g: any) => g.status === 'pending_sync');
       
       for (const submission of pendingGetStarted) {
@@ -127,7 +127,7 @@ export function DataSyncStatus() {
         }
       }
 
-      localStorage.setItem('edupulsex_getstarted', JSON.stringify(getStarted));
+      localStorage.setItem('tectonix_getstarted', JSON.stringify(getStarted));
 
       setSyncMessage(`Successfully synced ${syncedCount} submission(s)!`);
       checkPendingData();

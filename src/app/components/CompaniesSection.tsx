@@ -39,41 +39,47 @@ export function CompaniesSection() {
           viewport={{ once: true }}
           className="text-center mb-8"
         >
-          <p className="text-text-muted text-sm mb-6">Our students got placed at</p>
+          <p className="text-text-muted text-base font-medium mb-6">Our students got placed at</p>
         </motion.div>
+      </div>
 
-        {/* Scrolling companies */}
-        <div className="relative overflow-hidden">
-          <motion.div
-            animate={{
-              x: [0, -1000],
-            }}
-            transition={{
-              duration: 20,
-              repeat: Infinity,
-              ease: "linear",
-            }}
-            className="flex gap-6 sm:gap-12 items-center"
-          >
-            {[...companies, ...companies, ...companies].map((company, index) => (
-              <div
-                key={index}
-                className="flex-shrink-0 group"
-              >
-                <div className="flex items-center gap-3 px-4 sm:px-6 py-2 sm:py-3 bg-surface backdrop-blur-sm border border-surface-border rounded-xl hover:border-blue-500/50 transition-all theme-transition group-hover:scale-105">
-                  <img 
-                    src={company.logo} 
-                    alt={company.name} 
-                    loading="lazy"
-                    decoding="async"
-                    className="h-6 sm:h-8 w-auto object-contain brightness-90 group-hover:brightness-100 transition-all"
-                  />
-                  <span className="text-text-secondary whitespace-nowrap text-sm sm:text-base font-medium">{company.name}</span>
-                </div>
+      {/* Full-width scrolling marquee */}
+      <div className="relative w-full overflow-hidden">
+        {/* Gradient overlays for smooth fading at edges */}
+        <div className="absolute left-0 top-0 bottom-0 w-24 sm:w-48 z-10 bg-gradient-to-r from-page-bg via-page-bg/80 to-transparent pointer-events-none" />
+        <div className="absolute right-0 top-0 bottom-0 w-24 sm:w-48 z-10 bg-gradient-to-l from-page-bg via-page-bg/80 to-transparent pointer-events-none" />
+
+        <motion.div
+          animate={{
+            x: [0, -1500],
+          }}
+          transition={{
+            duration: 35,
+            repeat: Infinity,
+            ease: "linear",
+          }}
+          className="flex gap-6 sm:gap-12 items-center w-max"
+        >
+          {[...companies, ...companies, ...companies, ...companies].map((company, index) => (
+            <div
+              key={index}
+              className="flex-shrink-0 group py-6"
+            >
+              <div className="flex flex-col items-center gap-4 min-w-[180px] sm:min-w-[240px] px-10 sm:px-14 py-8 sm:py-10 bg-surface/40 backdrop-blur-md border border-surface-border/50 rounded-3xl shadow-sm hover:shadow-2xl hover:border-blue-500/50 transition-all theme-transition group-hover:scale-110 group-hover:-translate-y-2">
+                <img 
+                  src={company.logo} 
+                  alt={company.name} 
+                  loading="lazy"
+                  decoding="async"
+                  className="h-12 sm:h-20 w-auto object-contain transition-all"
+                />
+                <span className="text-sm font-black text-text-muted group-hover:text-blue-400 transition-colors uppercase tracking-widest">
+                  {company.name}
+                </span>
               </div>
-            ))}
-          </motion.div>
-        </div>
+            </div>
+          ))}
+        </motion.div>
       </div>
     </div>
   );

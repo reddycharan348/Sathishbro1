@@ -79,13 +79,13 @@ export function EnrollmentModal({ isOpen, onClose, courseName, coursePrice }: En
 
       // Store data locally as backup
       try {
-        const enrollments = JSON.parse(localStorage.getItem('edupulsex_enrollments') || '[]');
+        const enrollments = JSON.parse(localStorage.getItem('tectonix_enrollments') || '[]');
         enrollments.push({
           ...enrollmentData,
           id: `local_${Date.now()}`,
           submittedAt: new Date().toISOString()
         });
-        localStorage.setItem('edupulsex_enrollments', JSON.stringify(enrollments));
+        localStorage.setItem('tectonix_enrollments', JSON.stringify(enrollments));
         console.log('Enrollment also saved locally as backup');
       } catch (localError) {
         console.warn('Could not save to localStorage:', localError);
@@ -106,14 +106,14 @@ export function EnrollmentModal({ isOpen, onClose, courseName, coursePrice }: En
             enrollmentDate: new Date().toISOString(),
             coursePrice: coursePrice,
           };
-          const enrollments = JSON.parse(localStorage.getItem('edupulsex_enrollments') || '[]');
+          const enrollments = JSON.parse(localStorage.getItem('tectonix_enrollments') || '[]');
           enrollments.push({
             ...enrollmentData,
             id: `local_${Date.now()}`,
             submittedAt: new Date().toISOString(),
             status: 'pending_sync'
           });
-          localStorage.setItem('edupulsex_enrollments', JSON.stringify(enrollments));
+          localStorage.setItem('tectonix_enrollments', JSON.stringify(enrollments));
           
           // Show success even if backend is down
           setIsSuccess(true);

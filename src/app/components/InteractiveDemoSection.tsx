@@ -96,7 +96,7 @@ export function InteractiveDemoSection() {
             Experience the Platform
           </h2>
           <p className="text-lg text-text-muted max-w-2xl mx-auto">
-            Explore our key features and see how EduPulseX makes learning engaging and effective
+            Explore our key features and see how Tectonix makes learning engaging and effective
             with cutting-edge technology and industry-proven methodologies.
           </p>
         </motion.div>
@@ -187,7 +187,7 @@ export function InteractiveDemoSection() {
                       <div className="w-3 h-3 rounded-full bg-amber-500" />
                       <div className="w-3 h-3 rounded-full bg-green-500" />
                     </div>
-                    <div className="text-xs text-text-muted">EduPulseX Dashboard</div>
+                    <div className="text-xs text-text-muted">Tectonix Dashboard</div>
                   </div>
 
                   {/* Content boxes */}

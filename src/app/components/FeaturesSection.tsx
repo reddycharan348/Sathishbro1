@@ -79,7 +79,7 @@ export const FeaturesSection = memo(function FeaturesSection() {
 
                 {/* Content */}
                 <h3 className="relative text-lg sm:text-xl text-heading mb-2 sm:mb-3">{feature.title}</h3>
-                <p className="relative text-sm text-text-muted leading-relaxed">
+                <p className="relative text-base text-text-muted leading-relaxed">
                   {feature.description}
                 </p>
 

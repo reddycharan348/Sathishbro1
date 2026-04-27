@@ -25,7 +25,7 @@ const trainers = [
     rating: 4.9,
     studentsGuided: '2,500+',
     linkedin: '#',
-    email: 'rajesh.kumar@edupulsex.com'
+    email: 'rajesh.kumar@tectonix.com'
   },
   {
     id: 2,
@@ -49,7 +49,7 @@ const trainers = [
     rating: 4.8,
     studentsGuided: '1,800+',
     linkedin: '#',
-    email: 'priya.sharma@edupulsex.com'
+    email: 'priya.sharma@tectonix.com'
   },
   {
     id: 3,
@@ -73,7 +73,7 @@ const trainers = [
     rating: 4.9,
     studentsGuided: '1,500+',
     linkedin: '#',
-    email: 'arun.patel@edupulsex.com'
+    email: 'arun.patel@tectonix.com'
   },
   {
     id: 4,
@@ -97,7 +97,7 @@ const trainers = [
     rating: 4.9,
     studentsGuided: '2,000+',
     linkedin: '#',
-    email: 'meera.reddy@edupulsex.com'
+    email: 'meera.reddy@tectonix.com'
   }
 ];
 

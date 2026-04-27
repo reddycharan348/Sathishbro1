@@ -384,9 +384,9 @@ export const CoursesSection = memo(function CoursesSection() {
             <motion.div key={i} initial={{ opacity: 0, scale: 0.9 }} whileInView={{ opacity: 1, scale: 1 }}
               transition={{ delay: i * 0.08 }} viewport={{ once: true }} whileHover={{ y: -4 }}
               className="bg-card-bg border border-card-border rounded-2xl p-5 text-center hover:border-blue-500/40 hover:shadow-lg hover:shadow-blue-500/10 transition-all">
-              <div className="text-2xl text-heading bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent mb-1">{s.value}</div>
-              <div className="text-sm text-text-secondary mb-0.5">{s.label}</div>
-              <div className="text-xs text-slate-600">{s.sub}</div>
+              <div className="text-3xl font-bold text-heading bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent mb-1">{s.value}</div>
+              <div className="text-base font-medium text-text-secondary mb-1">{s.label}</div>
+              <div className="text-sm text-slate-600">{s.sub}</div>
             </motion.div>
           ))}
         </motion.div>
@@ -425,8 +425,8 @@ export const CoursesSection = memo(function CoursesSection() {
                     <LevelBadge level={featured.level} />
                     <span className="text-xs text-text-muted">{featured.duration}</span>
                   </div>
-                  <h3 className="text-2xl text-heading mb-2 leading-snug group-hover:text-blue-300 transition-colors">{featured.title}</h3>
-                  <p className="text-sm text-text-muted mb-4 leading-relaxed">{featured.tagline}</p>
+                  <h3 className="text-3xl font-bold text-heading mb-4 leading-snug group-hover:text-blue-300 transition-colors">{featured.title}</h3>
+                  <p className="text-xl text-text-muted mb-6 leading-relaxed">{featured.tagline}</p>
 
                   {/* outcomes */}
                   <ul className="space-y-1.5 mb-5">
@@ -578,8 +578,8 @@ export const CoursesSection = memo(function CoursesSection() {
             <Target className="w-3.5 h-3.5" />
             Not sure which course to pick?
           </div>
-          <h3 className="text-3xl text-heading mb-3">Talk to a Career Counsellor</h3>
-          <p className="text-text-muted max-w-xl mx-auto mb-8 leading-relaxed text-sm">
+          <h3 className="text-4xl font-bold text-heading mb-4">Talk to a Career Counsellor</h3>
+          <p className="text-base text-text-muted max-w-2xl mx-auto mb-10 leading-relaxed">
             Our engineering experts will help you pick the right course based on your branch,
             current skill level and career goals — completely free.
           </p>
@@ -659,12 +659,12 @@ function CourseGridCard({ course, idx, isExpanded, onExpand, onEnroll }:
           </div>
 
           {/* title */}
-          <h3 className="text-base text-heading leading-snug mb-1.5 group-hover:text-blue-300 transition-colors">
+          <h3 className="text-lg font-bold text-heading leading-snug mb-2 group-hover:text-blue-300 transition-colors">
             {course.title}
           </h3>
 
           {/* tagline */}
-          <p className="text-xs text-text-muted leading-relaxed mb-4 line-clamp-2">
+          <p className="text-lg text-text-muted leading-relaxed mb-4 line-clamp-2">
             {course.tagline}
           </p>
 
@@ -675,9 +675,9 @@ function CourseGridCard({ course, idx, isExpanded, onExpand, onEnroll }:
               { icon: Code, val: `${course.projects}`, sub: 'Projects' },
             ] as const).map((s, i) => (
               <div key={i} className={`flex flex-col items-center py-2.5 ${i < 1 ? 'border-r border-card-border' : ''} bg-surface`}>
-                <s.icon className="w-3.5 h-3.5 text-blue-400 mb-1" />
-                <span className="text-sm text-heading">{s.val}</span>
-                <span className="text-xs text-slate-600">{s.sub}</span>
+                <s.icon className="w-4 h-4 text-blue-400 mb-1.5" />
+                <span className="text-base font-bold text-heading">{s.val}</span>
+                <span className="text-xs font-medium text-slate-600">{s.sub}</span>
               </div>
             ))}
           </div>

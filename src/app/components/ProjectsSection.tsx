@@ -450,10 +450,10 @@ function ProjectCard({ project, idx }: { project: typeof PROJECTS[0]; idx: numbe
 
         {/* ── body ── */}
         <div className="flex flex-col flex-1 p-5">
-          <h3 className="text-base text-heading leading-snug mb-2 group-hover:text-blue-300 transition-colors line-clamp-1">
+          <h3 className="text-lg font-bold text-heading leading-snug mb-2 group-hover:text-blue-300 transition-colors line-clamp-1">
             {project.title}
           </h3>
-          <p className="text-xs text-text-muted leading-relaxed mb-4 line-clamp-2">{project.description}</p>
+          <p className="text-lg text-text-muted leading-relaxed mb-4 line-clamp-2">{project.description}</p>
 
           {/* tech stack */}
           <div className="flex flex-wrap gap-1.5 mb-4">
@@ -574,8 +574,8 @@ function FeaturedProjectCard({ project }: { project: typeof PROJECTS[0] }) {
               <span className="text-xs text-text-muted flex items-center gap-1"><Clock className="w-3 h-3" />{project.duration}</span>
               <span className="text-xs text-text-muted flex items-center gap-1"><Users className="w-3 h-3" />{project.team} members</span>
             </div>
-            <h3 className="text-2xl text-heading mb-2 leading-snug group-hover:text-blue-300 transition-colors">{project.title}</h3>
-            <p className="text-sm text-text-muted mb-4 leading-relaxed">{project.description}</p>
+            <h3 className="text-3xl font-bold text-heading mb-4 leading-snug group-hover:text-blue-300 transition-colors">{project.title}</h3>
+            <p className="text-xl text-text-muted mb-6 leading-relaxed">{project.description}</p>
 
             <ul className="space-y-2 mb-5">
               {project.outcomes.map((o, i) => (
@@ -678,9 +678,9 @@ export function ProjectsSection() {
             <motion.div key={i} initial={{ opacity: 0, scale: 0.9 }} whileInView={{ opacity: 1, scale: 1 }}
               transition={{ delay: i * 0.08 }} viewport={{ once: true }} whileHover={{ y: -4 }}
               className="bg-card-bg border border-card-border rounded-2xl p-5 text-center hover:border-blue-500/40 hover:shadow-lg hover:shadow-blue-500/10 transition-all">
-              <div className="text-2xl text-heading bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent mb-1">{s.value}</div>
-              <div className="text-sm text-text-secondary mb-0.5">{s.label}</div>
-              <div className="text-xs text-slate-600">{s.sub}</div>
+              <div className="text-3xl font-bold text-heading bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent mb-1">{s.value}</div>
+              <div className="text-base font-medium text-text-secondary mb-1">{s.label}</div>
+              <div className="text-sm text-slate-600">{s.sub}</div>
             </motion.div>
           ))}
         </motion.div>
@@ -836,7 +836,7 @@ export function ProjectsSection() {
                 <h3 className="text-2xl text-heading">Contribute Your Project</h3>
               </div>
               <p className="text-text-muted max-w-lg leading-relaxed text-sm">
-                Built something amazing? Share your project with the EduPulseX community!
+                Built something amazing? Share your project with the Tectonix community!
                 Get featured, help fellow students, and showcase your skills to recruiters.
               </p>
               <div className="flex flex-wrap gap-4 mt-4">
@@ -849,12 +849,12 @@ export function ProjectsSection() {
               </div>
             </div>
             <div className="flex flex-col gap-3 shrink-0">
-              <motion.a href="https://github.com/EduPulseX" target="_blank" rel="noopener noreferrer"
+              <motion.a href="https://github.com/Tectonix" target="_blank" rel="noopener noreferrer"
                 whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}
                 className="px-8 py-4 bg-gradient-to-r from-blue-600 to-cyan-500 text-heading rounded-xl text-sm hover:shadow-2xl hover:shadow-blue-500/30 transition-all flex items-center gap-2 justify-center">
                 <Github className="w-5 h-5" /> Submit on GitHub
               </motion.a>
-              <motion.a href="https://github.com/EduPulseX" target="_blank" rel="noopener noreferrer"
+              <motion.a href="https://github.com/Tectonix" target="_blank" rel="noopener noreferrer"
                 whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}
                 className="px-8 py-4 bg-surface/70 border border-surface-border text-text-secondary rounded-xl text-sm hover:border-blue-500/40 hover:text-heading transition-all flex items-center gap-2 justify-center">
                 <TrendingUp className="w-4 h-4" /> View All on GitHub

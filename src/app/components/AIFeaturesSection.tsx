@@ -66,8 +66,37 @@ export function AIFeaturesSection() {
       <div className="absolute bottom-0 right-0 w-96 h-96 bg-purple-500/5 rounded-full blur-3xl" />
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-
-
+        {/* Header */}
+        <div className="text-center mb-16">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="inline-flex items-center gap-2 px-4 py-2 bg-teal-500/10 rounded-full border border-teal-500/20 mb-6"
+          >
+            <Zap className="w-4 h-4 text-teal-400" />
+            <span className="text-sm font-medium text-teal-400">Next-Gen Learning</span>
+          </motion.div>
+          <motion.h2
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.1 }}
+            viewport={{ once: true }}
+            className="text-4xl md:text-5xl font-bold text-heading mb-6"
+          >
+            AI-Powered <span className="bg-gradient-to-r from-teal-400 to-cyan-400 bg-clip-text text-transparent">Education</span>
+          </motion.h2>
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.2 }}
+            viewport={{ once: true }}
+            className="text-lg text-text-muted max-w-2xl mx-auto"
+          >
+            Unlock your full potential with our suite of intelligent learning features designed 
+            to personalize your education and accelerate your career growth.
+          </motion.p>
+        </div>
         {/* AI Features grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {aiFeatures.map((feature, index) => (
@@ -93,7 +122,7 @@ export function AIFeaturesSection() {
           {/* AI Benefits */}
           <div className="bg-surface border border-teal-500/20 rounded-2xl p-8 mb-8 theme-transition">
             <h3 className="text-2xl text-heading mb-6 text-center">
-              Why EduPulseX AI is Your Ultimate Learning Partner
+              Why Tectonix AI is Your Ultimate Learning Partner
             </h3>
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
               <div className="flex items-start gap-3">
@@ -121,7 +150,10 @@ export function AIFeaturesSection() {
           {/* CTA Buttons */}
           <div className="text-center">
             <div className="inline-flex flex-col sm:flex-row items-center gap-4">
-              <button className="px-8 py-4 bg-gradient-to-r from-teal-500 to-cyan-600 text-white rounded-xl hover:shadow-2xl hover:shadow-teal-500/50 transition-all transform hover:scale-105">
+              <button 
+                onClick={() => window.dispatchEvent(new CustomEvent('open-get-started'))}
+                className="px-8 py-4 bg-gradient-to-r from-teal-500 to-cyan-600 text-white rounded-xl hover:shadow-2xl hover:shadow-teal-500/50 transition-all transform hover:scale-105"
+              >
                 Try AI Assistant Free
               </button>
               <button className="px-8 py-4 bg-surface border border-surface-border text-heading rounded-xl hover:bg-surface hover:border-teal-500/50 transition-all theme-transition">

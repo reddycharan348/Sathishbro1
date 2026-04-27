@@ -88,6 +88,11 @@ export function ProjectIdeasSection() {
       { title: 'Pneumatic Scissor Lift Mechanism', difficulty: 'Intermediate', duration: '4 weeks' },
       { title: 'Heat Exchanger Design & Analysis', difficulty: 'Advanced', duration: '5 weeks' },
       { title: 'Automatic Gear Transmission System', difficulty: 'Advanced', duration: '6 weeks' },
+      { title: 'AI-Based Predictive Maintenance System', difficulty: 'Advanced', duration: '8 weeks' },
+      { title: 'Electric Vehicle Chassis Design & Simulation', difficulty: 'Advanced', duration: '7 weeks' },
+      { title: 'Smart Industrial Conveyor Belt with IoT', difficulty: 'Intermediate', duration: '5 weeks' },
+      { title: 'Automatic Solar Panel Cleaning Robot', difficulty: 'Intermediate', duration: '4 weeks' },
+      { title: 'CFD Analysis of Formula Student Race Car', difficulty: 'Advanced', duration: '6 weeks' },
     ],
   };
 
@@ -120,7 +125,7 @@ export function ProjectIdeasSection() {
           </p>
         </motion.div>
 
-        {/* Department cards & Inline expanded content */}
+        {/* Department cards */}
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12 items-start">
           {departments.map((dept, index) => {
             const isSelected = selectedDepartment === dept.id;
@@ -128,25 +133,18 @@ export function ProjectIdeasSection() {
             return (
               <motion.div
                 key={dept.id}
-                layout
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                transition={{ delay: index * 0.1, layout: { duration: 0.3 } }}
+                transition={{ delay: index * 0.1 }}
                 viewport={{ once: true }}
-                className={`group relative text-left w-full ${
-                  isSelected ? 'md:col-span-2 lg:col-span-4' : ''
-                }`}
+                className="group relative text-left w-full"
               >
                 {/* The card itself */}
                 <button
-                  onClick={() => setSelectedDepartment(isSelected ? null : dept.id)}
-                  className={`w-full text-left bg-card-bg backdrop-blur-sm border rounded-2xl p-6 transition-all theme-transition ${
-                    isSelected
-                      ? 'border-blue-500 shadow-2xl shadow-blue-500/20'
-                      : 'border-card-border hover:border-blue-500/50'
-                  }`}
+                  onClick={() => setSelectedDepartment(dept.id)}
+                  className="w-full text-left bg-card-bg backdrop-blur-sm border border-card-border rounded-2xl p-6 transition-all hover:border-blue-500/50 hover:shadow-xl hover:shadow-blue-500/10 theme-transition"
                 >
-                  <div className={`flex ${isSelected ? 'flex-col sm:flex-row items-start sm:items-center justify-between gap-6' : 'flex-col'}`}>
+                  <div className="flex flex-col">
                     <div>
                       {/* Icon */}
                       <motion.div
@@ -156,92 +154,108 @@ export function ProjectIdeasSection() {
                       >
                         <dept.icon className="w-7 h-7 text-white" />
                       </motion.div>
-
                       {/* Content */}
                       <h3 className="text-xl text-heading mb-2 font-semibold">{dept.name}</h3>
                       <p className="text-xs text-text-secondary mb-3">{dept.shortName}</p>
-                      {!isSelected && <p className="text-sm text-text-muted mb-4">{dept.description}</p>}
+                      <p className="text-sm text-text-muted mb-4">{dept.description}</p>
                     </div>
-
                     {/* Project count & expand icon */}
-                    <div className={`flex items-center justify-between ${isSelected ? 'w-full sm:w-auto' : 'w-full'}`}>
+                    <div className="flex items-center justify-between w-full">
                       <span className="text-sm text-blue-600 dark:text-blue-400 font-medium">
                         {projectIdeas[dept.id as keyof typeof projectIdeas].length} Projects
                       </span>
-                      <ChevronRight className={`w-5 h-5 text-blue-600 dark:text-blue-400 transition-transform ${
-                        isSelected ? 'rotate-90' : ''
-                      }`} />
+                      <div className="flex items-center gap-2 text-xs text-blue-400 font-bold group-hover:gap-3 transition-all">
+                        View All <ChevronRight className="w-4 h-4" />
+                      </div>
                     </div>
                   </div>
-
-                  {/* Active indicator */}
-                  {isSelected && (
-                    <motion.div
-                      layoutId="activeDept"
-                      className={`absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r ${dept.color} rounded-b-2xl`}
-                    />
-                  )}
                 </button>
-
-                {/* Inline Expanded Projects List */}
-                <AnimatePresence>
-                  {isSelected && (
-                    <motion.div
-                      initial={{ opacity: 0, height: 0, marginTop: 0 }}
-                      animate={{ opacity: 1, height: 'auto', marginTop: 24 }}
-                      exit={{ opacity: 0, height: 0, marginTop: 0 }}
-                      transition={{ duration: 0.3 }}
-                      className="overflow-hidden w-full"
-                    >
-                      <div className="bg-card-bg backdrop-blur-sm border border-card-border rounded-2xl p-6 sm:p-8 theme-transition">
-                        <div className="flex flex-col sm:flex-row sm:items-center justify-between mb-6 gap-4">
-                          <h3 className="text-2xl text-heading font-semibold">
-                            {dept.name} Projects
-                          </h3>
-                          <span className="px-4 py-2 bg-blue-600/10 border border-blue-500/30 text-blue-600 dark:text-blue-400 rounded-full text-sm font-medium w-max">
-                            {projectIdeas[dept.id as keyof typeof projectIdeas].length} Available
-                          </span>
-                        </div>
-
-                        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
-                          {projectIdeas[dept.id as keyof typeof projectIdeas].map((project, idx) => (
-                            <motion.div
-                              key={idx}
-                              initial={{ opacity: 0, scale: 0.9 }}
-                              animate={{ opacity: 1, scale: 1 }}
-                              transition={{ delay: idx * 0.02 }}
-                              whileHover={{ y: -4 }}
-                              className="bg-surface border border-surface-border rounded-xl p-4 hover:border-blue-500/50 transition-all group cursor-pointer theme-transition"
-                            >
-                              <div className="flex items-start justify-between mb-3">
-                                <h4 className="text-sm text-heading font-medium group-hover:text-blue-500 dark:group-hover:text-blue-400 transition-colors flex-1">
-                                  {project.title}
-                               </h4>
-                              </div>
-                              <div className="flex items-center gap-2 text-xs">
-                                <span className={`px-2 py-1 rounded font-medium ${
-                                  project.difficulty === 'Beginner'
-                                    ? 'bg-green-100 text-green-700 dark:bg-green-600/20 dark:text-green-400'
-                                    : project.difficulty === 'Intermediate'
-                                    ? 'bg-amber-100 text-amber-700 dark:bg-amber-600/20 dark:text-amber-400'
-                                    : 'bg-red-100 text-red-700 dark:bg-red-600/20 dark:text-red-400'
-                                }`}>
-                                  {project.difficulty}
-                                </span>
-                                <span className="text-text-muted">•</span>
-                                <span className="text-text-secondary font-medium">{project.duration}</span>
-                              </div>
-                            </motion.div>
-                          ))}
-                        </div>
-                      </div>
-                    </motion.div>
-                  )}
-                </AnimatePresence>
               </motion.div>
             );
           })}
         </div>
+
+        {/* ════════ FULL SCREEN MODAL (The "New Page on Top") ════════ */}
+        <AnimatePresence>
+          {selectedDepartment && (
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              className="fixed inset-0 z-[100] bg-black/95 backdrop-blur-xl overflow-y-auto"
+            >
+              <div className="min-h-screen p-4 sm:p-10">
+                {/* Modal Header */}
+                <div className="max-w-7xl mx-auto flex items-center justify-between mb-12">
+                  {(() => {
+                    const dept = departments.find(d => d.id === selectedDepartment)!;
+                    return (
+                      <>
+                        <div className="flex items-center gap-6">
+                          <div className={`p-4 rounded-2xl bg-gradient-to-br ${dept.color} shadow-2xl shadow-blue-500/20`}>
+                            <dept.icon className="w-10 h-10 text-white" />
+                          </div>
+                          <div>
+                            <h2 className="text-3xl sm:text-5xl font-black text-heading mb-2">
+                              {dept.name} <span className="text-white/40">Projects</span>
+                            </h2>
+                            <p className="text-lg text-text-muted">{dept.description}</p>
+                          </div>
+                        </div>
+                        <button 
+                          onClick={() => setSelectedDepartment(null)}
+                          className="p-4 bg-white/5 hover:bg-white/10 rounded-2xl border border-white/10 text-white transition-all hover:rotate-90"
+                        >
+                          <X className="w-8 h-8" />
+                        </button>
+                      </>
+                    );
+                  })()}
+                </div>
+
+                {/* Projects Grid in Modal */}
+                <div className="max-w-7xl mx-auto grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                  {projectIdeas[selectedDepartment as keyof typeof projectIdeas].map((project, idx) => (
+                    <motion.div
+                      key={idx}
+                      initial={{ opacity: 0, y: 30 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ delay: idx * 0.05 }}
+                      whileHover={{ y: -8 }}
+                      className="bg-surface/40 backdrop-blur-md border border-white/10 rounded-3xl p-8 group hover:border-blue-500/50 transition-all shadow-2xl"
+                    >
+                      <div className="flex items-center gap-3 mb-6">
+                        <div className="w-12 h-12 rounded-2xl bg-blue-600/20 flex items-center justify-center text-blue-400 font-bold text-xl group-hover:bg-blue-600 group-hover:text-white transition-all">
+                          {idx + 1}
+                        </div>
+                        <div className={`px-4 py-1.5 rounded-full text-[10px] font-black uppercase tracking-widest border ${
+                          project.difficulty === 'Advanced' ? 'bg-red-500/10 text-red-400 border-red-500/30' : 
+                          project.difficulty === 'Intermediate' ? 'bg-amber-500/10 text-amber-400 border-amber-500/30' : 
+                          'bg-emerald-500/10 text-emerald-400 border-emerald-500/30'
+                        }`}>
+                          {project.difficulty}
+                        </div>
+                      </div>
+                      
+                      <h4 className="text-2xl font-bold text-heading mb-4 leading-tight group-hover:text-blue-400 transition-colors">
+                        {project.title}
+                      </h4>
+                      
+                      <div className="flex items-center justify-between mt-auto pt-6 border-t border-white/5">
+                        <div className="flex items-center gap-2 text-text-muted text-sm font-medium">
+                          <Clock className="w-4 h-4" /> {project.duration}
+                        </div>
+                        <button className="flex items-center gap-2 text-blue-400 text-sm font-bold group-hover:gap-3 transition-all">
+                          Get Specs <ChevronRight className="w-4 h-4" />
+                        </button>
+                      </div>
+                    </motion.div>
+                  ))}
+                </div>
+              </div>
+            </motion.div>
+          )}
+        </AnimatePresence>
 
         {/* Bottom CTA */}
         {!selectedDepartment && (
@@ -252,7 +266,7 @@ export function ProjectIdeasSection() {
             className="text-center mt-12"
           >
             <p className="text-text-muted mb-4 font-medium">
-              Select any department above to explore 20+ project ideas
+              Select any department above to explore our premium project specs
             </p>
           </motion.div>
         )}
@@ -260,3 +274,15 @@ export function ProjectIdeasSection() {
     </div>
   );
 }
+
+const X = ({ className }: { className?: string }) => (
+  <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor">
+    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+  </svg>
+);
+
+const Clock = ({ className }: { className?: string }) => (
+  <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor">
+    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+  </svg>
+);

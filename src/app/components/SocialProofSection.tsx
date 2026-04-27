@@ -65,7 +65,7 @@ export function SocialProofSection() {
     },
     {
       rating: 5,
-      text: 'Got placed at Google with ₹28 LPA. Thank you EduPulseX!',
+      text: 'Got placed at Google with ₹28 LPA. Thank you Tectonix!',
       author: 'Priya S.',
       course: 'AI & Machine Learning',
     },

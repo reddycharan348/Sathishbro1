@@ -21,7 +21,7 @@ export function SuccessStoriesSection() {
         package: '₹24 LPA',
         skills: 'React, Node.js, AWS, System Design',
       },
-      testimonial: 'EduPulseX transformed my career. The personalized AI roadmap and real projects gave me the confidence to crack Amazon interviews. Within 3 months, I went from zero to hero!',
+      testimonial: 'Tectonix transformed my career. The personalized AI roadmap and real projects gave me the confidence to crack Amazon interviews. Within 3 months, I went from zero to hero!',
       timeline: '12 weeks',
       highlight: 'Got 3 offers in final placement drive',
     },
@@ -59,7 +59,7 @@ export function SuccessStoriesSection() {
         package: '₹32 LPA',
         skills: 'ROS, Python, Computer Vision, Embedded Systems',
       },
-      testimonial: 'After 6 months of failed interviews, EduPulseX gave me the robotics and AI skills that made me stand out. The project portfolio opened doors to global companies!',
+      testimonial: 'After 6 months of failed interviews, Tectonix gave me the robotics and AI skills that made me stand out. The project portfolio opened doors to global companies!',
       timeline: '16 weeks',
       highlight: 'Received job offer from dream company',
     },
@@ -117,7 +117,7 @@ export function SuccessStoriesSection() {
             From Students to <span className="bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">Industry Leaders</span>
           </h2>
           <p className="text-lg text-text-muted max-w-2xl mx-auto">
-            See how EduPulseX students landed dream jobs at top companies
+            See how Tectonix students landed dream jobs at top companies
           </p>
         </motion.div>
 
@@ -177,7 +177,7 @@ export function SuccessStoriesSection() {
                   <div className="flex items-center gap-3 px-6 py-3 bg-gradient-to-r from-blue-600/20 to-cyan-500/20 border border-blue-500/30 rounded-full">
                     <TrendingUp className="w-5 h-5 text-cyan-400" />
                     <span className="text-white">{currentStory.timeline}</span>
-                    <span className="text-cyan-400">with EduPulseX</span>
+                    <span className="text-cyan-400">with Tectonix</span>
                   </div>
                 </motion.div>
 

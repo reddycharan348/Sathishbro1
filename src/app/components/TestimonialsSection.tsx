@@ -8,7 +8,7 @@ export function TestimonialsSection() {
       role: 'Software Engineer at Google',
       branch: 'CS/IT',
       image: '👩‍💻',
-      content: 'EduPulseX transformed my career! The structured roadmap and live projects helped me land my dream job at Google. The mentorship was invaluable.',
+      content: 'Tectonix transformed my career! The structured roadmap and live projects helped me land my dream job at Google. The mentorship was invaluable.',
       rating: 5,
     },
     {
