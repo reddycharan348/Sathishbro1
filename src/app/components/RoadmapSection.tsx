@@ -1023,7 +1023,6 @@ export function RoadmapSection() {
           </motion.div>
         )}
       </AnimatePresence>
-      </div>
     </section>
   );
 }
