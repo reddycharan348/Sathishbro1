@@ -610,7 +610,7 @@ function CourseGridCard({ course, idx, isExpanded, onExpand, onEnroll }:
   { course: typeof courses[0]; idx: number; isExpanded: boolean; onExpand: () => void; onEnroll: (n: string) => void }) {
 
   return (
-    <motion.div initial={{ opacity: 0, y: 28 }} whileInView={{ opacity: 1, y: 0 }}
+    <motion.div id={`course-grid-${course.id}`} initial={{ opacity: 0, y: 28 }} whileInView={{ opacity: 1, y: 0 }}
       transition={{ delay: idx * 0.07, type: 'spring', stiffness: 100 }} viewport={{ once: true }}>
       <div className={`group h-full flex flex-col bg-card-bg border rounded-2xl overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl hover:shadow-blue-500/10 ${
         isExpanded ? 'border-blue-500/60 shadow-xl shadow-blue-900/20' : 'border-card-border hover:border-blue-500/40'
@@ -769,7 +769,7 @@ function CourseListRow({ course, idx, onEnroll }:
   { course: typeof courses[0]; idx: number; onEnroll: (n: string) => void }) {
 
   return (
-    <motion.div initial={{ opacity: 0, x: -20 }} whileInView={{ opacity: 1, x: 0 }}
+    <motion.div id={`course-list-${course.id}`} initial={{ opacity: 0, x: -20 }} whileInView={{ opacity: 1, x: 0 }}
       transition={{ delay: idx * 0.05 }} viewport={{ once: true }}>
       <div className="group flex flex-col sm:flex-row items-start gap-5 bg-card-bg border border-card-border rounded-2xl p-5 hover:border-blue-500/40 hover:shadow-xl hover:shadow-blue-500/10 transition-all hover:-translate-y-0.5">
 

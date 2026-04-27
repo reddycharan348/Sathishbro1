@@ -399,6 +399,7 @@ function ProjectCard({ project, idx }: { project: typeof PROJECTS[0]; idx: numbe
 
   return (
     <motion.div
+      id={`project-${project.id}`}
       initial={{ opacity: 0, y: 28 }}
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ delay: (idx % PAGE_SIZE) * 0.05, type: 'spring', stiffness: 90 }}

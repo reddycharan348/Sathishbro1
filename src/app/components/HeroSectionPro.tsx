@@ -32,7 +32,7 @@ export function HeroSectionPro({ setActiveSection }: HeroSectionProProps) {
   };
 
   return (
-    <div className="relative min-h-[90vh] lg:min-h-screen flex items-center overflow-hidden theme-transition pt-16 lg:pt-0">
+    <section id="hero-main" className="relative min-h-[90vh] lg:min-h-screen flex items-center overflow-hidden theme-transition pt-16 lg:pt-0">
       
       {/* Split Background Effect requested by user */}
       <div className="absolute inset-0 pointer-events-none flex">
@@ -150,6 +150,6 @@ export function HeroSectionPro({ setActiveSection }: HeroSectionProProps) {
 
         </div>
       </div>
-    </div>
+    </section>
   );
 }

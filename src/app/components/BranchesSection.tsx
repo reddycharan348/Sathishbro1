@@ -466,6 +466,7 @@ export const BranchesSection = memo(function BranchesSection() {
 
               return (
                 <motion.div
+                  id={`branch-${branch.shortName.toLowerCase().replace(/\s+/g, '-')}`}
                   key={globalIndex}
                   initial={{ opacity: 0, y: 24 }}
                   whileInView={{ opacity: 1, y: 0 }}

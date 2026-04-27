@@ -136,6 +136,7 @@ function PaperCard({ paper, idx }: { paper: typeof PAPERS[0]; idx: number }) {
 
   return (
     <motion.div
+      id={`paper-${paper.id}`}
       initial={{ opacity: 0, y: 22 }}
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ delay: (idx % PAGE_SIZE) * 0.04, type: 'spring', stiffness: 90 }}
