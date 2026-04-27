@@ -86,7 +86,7 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen bg-page-bg text-page-fg theme-transition">
+    <div className="min-h-screen bg-page-bg text-page-fg theme-transition overflow-x-hidden w-full">
       <Navbar activePage={activePage} setActivePage={setActivePage} />
       
       <main>
