@@ -1221,6 +1221,7 @@ export const BranchesSection = memo(function BranchesSection() {
           </motion.div>
         )}
       </AnimatePresence>
+      </div>
     </section>
   );
 });
